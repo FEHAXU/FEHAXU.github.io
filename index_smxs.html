@@ -64,7 +64,7 @@
 	</style>
 	<script type="text/javascript">
 		$(function(){
-			alert("测试1")
+			//alert("测试1")
 			$(".yxz").hide();
 			$(".xz").hide();
 			$(".xz").show(2000);
@@ -76,7 +76,7 @@
 			}
 			
 			if(isWeiXin()){
-				alert("微信")
+				//alert("微信")
 				$(".shiwx").show();
 			}
 			else{
@@ -94,6 +94,9 @@
     		}else{
         		return false;
     		}
+		}
+		function xzwx(){
+			window.open("https://fehaxu.github.io/index_smxs.html");
 		}
 	</script>
 </head>
@@ -135,8 +138,9 @@
 		</div>
 	</div>
 	<div align="center" class="shiwx">
-		<h1 align="center" style="margin: auto;">请打开浏览器下载~</h1>
-		<input type="button" value="前往" style="border-radius: 25px;background-color: aqua;margin: auto;">
+		<h1 align="center" style="margin-top: auto;">请打开浏览器下载~</h1>
+		<h2 align="center">微信不支持进行下载操作！！！</h2>
+		<input type="button" value="前往" style="border-radius: 25px;background-color: aqua;margin: auto;" onClick="xzwx()">
 	</div>
 </body>
 </html>
