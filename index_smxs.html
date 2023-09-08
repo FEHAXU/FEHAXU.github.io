@@ -10,7 +10,8 @@
 		body{
 			position: relative;
 			font-family: 黑体;
-			background-image:url("https://fehaxu.github.io/img/basjdhjsa.png")
+			background-image:url("https://fehaxu.github.io/img/basjdhjsa.png");
+		
 		}
 		.bt{
 			margin-top: 50px;
@@ -54,9 +55,10 @@
 			height: 300px;
 		}
 		.shiwx{
-			
 			position: fixed;
+			left: 0;
 			top: 0;
+			opacity: 0.90;
 			background-color: antiquewhite;
 			width: 100%;
 			height: 100%;
@@ -68,11 +70,17 @@
 			$(".yxz").hide();
 			$(".xz").hide();
 			$(".xz").show(2000);
-			if(window.screen.availWidth<768){
-		
+			if(window.screen.availWidth<1000){
+				$(".smxz").hide();
 			}
 			else{
-				alert("电脑版访问可能会出现不太好的效果！")
+				$(".xzan").hide()
+				$(".xzdygbb").hide()
+				$(".smxz").show();
+				//$("body").attr("style","position:relative;font-family:黑体;background-color:#FFF20A;");
+				//$("body").css("background-image","")
+				
+				
 			}
 			
 			if(isWeiXin()){
@@ -82,13 +90,16 @@
 			else{
 				$(".shiwx").hide();
 			}
+			
 		})
 		function xzz(){
-			location.href = "https://fehaxu.github.io/app/apk/smxsPor.apk";
+			location.href = "https://fehaxu.github.io/app/apk/smxsPor5.apk";
 			$(".yxz").show(1000);
 		}
 		function isWeiXin(){
+			
     		var ua = window.navigator.userAgent.toLowerCase();
+			//alert(ua.match(/MicroMessenger/i))
     		if(ua.match(/MicroMessenger/i) == 'micromessenger'){
         		return true;
     		}else{
@@ -116,12 +127,16 @@
 		<p align="center">支持<span class="zzzy">所有功能</span>!</p>
 	</div>
 	<div align="center">
-		<h2 align="center">下载吧↓Beta2.0限时公测!</h2>
+          <h2 align="center">下载吧↓v1.0正式版上线！！！!!</h2>
 		<p align="center">
-			<img src="https://fehaxu.github.io/img/ljxz.png" alt="立即下载" width="250" height="61" onClick="xzz()">
+			<img src="https://fehaxu.github.io/img/ljxz.png" alt="立即下载" width="250" height="61" onClick="xzz()" class="xzan">
+	  </p>
+		<p align="center" class="smxz">
+			<img src="img/xzrwm1.png" alt="" width="100" height="100">
+			<p align="center" class="smxz">手机扫码下载！</p>
 		</p>
-		<p align="center">
-			<a href="app/apk/smxsPor1.apk">第一个版本下载</a>
+	  <p align="center">
+			<a href="app/apk/smxsPor1.apk" class="xzdygbb">第一个版本下载</a>
 		</p>
 	</div>
 	<div align="center" class="yxz">
@@ -138,9 +153,7 @@
 		</div>
 	</div>
 	<div align="center" class="shiwx">
-		<h1 align="center" style="margin-top: auto;">请打开浏览器下载~</h1>
-		<h2 align="center">微信不支持进行下载操作！！！</h2>
-		<input type="button" value="前往" style="border-radius: 25px;background-color: aqua;margin: auto;" onClick="xzwx()">
+		<img src="img/wxlj.png" alt="" style="width: 100%;height: 100%;">
 	</div>
 </body>
 </html>
