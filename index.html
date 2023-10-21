@@ -5,45 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/> 
 <meta charset="utf-8">
 <title>封封总部</title>
-	<style type="text/css">
-		.zbtb{
-			align-content: center;
-			content: "图标";
-		}
-		body{
-			user-select: none;
-			background-color: aliceblue;
+<script src="scrollreveal.js"></script>
+<script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+</head>
+	<style>
+		*{
 			font-family: 黑体;
 		}
-		.nr{
-    		position: absolute;
-   		    top: 142px;
-    		left: 133px;
-    		right: 0;
-    		margin: auto;
-    		text-align: center;
-    		height: 100%;
-    		width: 80%;
-    		background-color: aquamarine;
+		body{
+			background-attachment: fixed;
+    		background-size: cover;
+			background-color: black;
 		}
-		a{
-			background-color: aqua;
+		#bt{
+			text-align: center;
+			line-height: 200px;/*文字水平居中*/
+			margin:0 auto;/*div水平居中*/
+			position: fixed;
+  			top: 35%;
+  			left: 45%;
 		}
-	</style>
-	<script type="text/javascript">
-		function gy(){
-			alert("作者:封皓轩")
+		#dtbtt{
+			text-align: center;
+			line-height: 200px;/*文字水平居中*/
+			margin:0 auto;/*div水平居中*/
+			position: fixed;
+  			top: 35%;
+  			left: 37%;
+		}
+		.img {font-size: 65px}
+</style>
+<body>
+	<script language="javascript">
+		function hh(){
+			//
+			console.log('完事')
+			setTimeout(() =>{
+				$('#dtbtt').remove();
+			},4000);
 		}
 	</script>
-</head>
-<body>
-	<div align="left" class="zbtb">
-		<img src="img/zsy.jpg" alt="图片" width="128" height="128">
-	</div>
-	<div align="center" class="nr" ></div>
-	<span class="nr">
-		<p align="center">这个页什么也没有。</p>
-		<h1 align="center"><a href="html/zy.html">假期作业</a>II<a href="javascript:gy();">关于</a></h1>
-	</span>
+	<script language="javascript">
+		$(function(){
+			ScrollReveal().reveal('#bt',{
+				delay: 3000,
+    			duration: 3000,
+    			reset: false
+			});
+			//alert("初始化成功")
+			ScrollReveal().reveal('#mw',{
+				delay: 15000,
+    			duration: 3000,
+    			reset: false
+			});
+			setTimeout(() =>{
+				console.log('等待6秒后执行');
+				console.log($('#bt').text());
+				
+				$('#bt').attr('id','dtbtt');
+				$('#dtbtt').text("别来无恙啊~");
+				setTimeout(() =>{
+					$("#dtbtt").animate({
+						opacity: 0
+					}, 2000,"swing",hh);
+					/*setTimeout(() =>{
+						
+					},2000)*/
+				},2000);
+			}, 6000);
+		});
+	</script>
+<div align="center">
+  <p align="center" style="font-size: 70px;color: aliceblue;" id="bt">啊</p>
+	<p align="center" style="font-size: 65px;color: aqua;" id="mw">网站施工中，尽情期待！</p>
+		<p align="center" style="font-size: 65px;color: aqua;" id="mw"><img src="sy.jpg" width="99" height="99"></p>
+  </div>
 </body>
 </html>
