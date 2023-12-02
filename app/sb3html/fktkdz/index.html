@@ -9,14 +9,14 @@
   <title>疯狂坦克大战</title>
   <style>
     body {
-      color: #ffffff;
+      color: #000000;
       font-family: sans-serif;
       overflow: hidden;
       margin: 0;
       padding: 0;
     }
     :root, body.is-fullscreen {
-      background-color: #000000;
+      background-color: #ffffff;
     }
     [hidden] {
       display: none !important;
@@ -46,7 +46,7 @@
       cursor: default;
       user-select: none;
       -webkit-user-select: none;
-      background-color: #000000;
+      background-color: #ffffff;
     }
     #launch {
       background-color: rgba(0, 0, 0, 0.7);
@@ -142,7 +142,7 @@
     }
     
   </style>
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#ffffff">
   
 </head>
 <body>
@@ -159,17 +159,17 @@
   </div>
 
   <div id="loading" class="screen">
-    <noscript>启用JavaScript后继续</noscript>
-    
+    <noscript>Enable JavaScript</noscript>
+    <h1 class="loading-text">努力加载中...</h1>
     
     <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
   </div>
 
   <div id="error" class="screen" hidden>
-    <h1>错误</h1>
+    <h1>Error</h1>
     <details>
       <summary id="error-message"></summary>
-      <p id="error-stack" hidden></p>
+      <p id="error-stack"></p>
     </details>
   </div>
 
@@ -220,19 +220,37 @@
         videoProvider: vm.runtime.ioDevices.video.provider
       };
 
-      scaffolding.setUsername("player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
+      scaffolding.setUsername("FHX".replace(/#/g, () => Math.floor(Math.random() * 10)));
       scaffolding.setAccentColor("#ff4c4c");
 
       scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@疯狂坦克大战.sb3"));
+
+      const greenFlagButton = document.createElement('img');
+      greenFlagButton.src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.63 17.5"><path d="M.75 2a6.44 6.44 0 017.69 0h0a6.44 6.44 0 007.69 0v10.4a6.44 6.44 0 01-7.69 0h0a6.44 6.44 0 00-7.69 0" fill="#4cbf56" stroke="#45993d" stroke-linecap="round" stroke-linejoin="round"/><path stroke-width="1.5" fill="#4cbf56" stroke="#45993d" stroke-linecap="round" stroke-linejoin="round" d="M.75 16.75v-16"/></svg>');
+      greenFlagButton.className = 'control-button green-flag-button';
+      greenFlagButton.draggable = false;
+      greenFlagButton.addEventListener('click', () => {
+        scaffolding.greenFlag();
+      });
+      scaffolding.addEventListener('PROJECT_RUN_START', () => {
+        greenFlagButton.classList.add('active');
+      });
+      scaffolding.addEventListener('PROJECT_RUN_STOP', () => {
+        greenFlagButton.classList.remove('active');
+      });
+      scaffolding.addControlButton({
+        element: greenFlagButton,
+        where: 'top-left'
+      });
 
       vm.setTurboMode(false);
       if (vm.setInterpolation) vm.setInterpolation(false);
       if (vm.setFramerate) vm.setFramerate(30);
       if (vm.renderer.setUseHighQualityRender) vm.renderer.setUseHighQualityRender(false);
       if (vm.setRuntimeOptions) vm.setRuntimeOptions({
-        fencing: true,
-        miscLimits: true,
-        maxClones: 300,
+        fencing: false,
+        miscLimits: false,
+        maxClones: 9999999999,
       });
       if (vm.setCompilerOptions) vm.setCompilerOptions({
         enabled: true,
@@ -283,7 +301,7 @@
           if (location.protocol === 'file:') {
             reject(new Error('请在原网页访问'));
           } else {
-            reject(new Error('请求数据超时'));
+            reject(new Error('请求加载数据时间超时'));
           }
         };
         xhr.onprogress = (e) => {
@@ -305,7 +323,6 @@
       loadingScreen.hidden = true;
       if (true) {
         scaffolding.start();
-		$(".control-button green-flag-button active").before("<h3>封皓轩制作</h3>").css("margin-left","20px");
       } else {
         launchScreen.hidden = false;
         launchScreen.addEventListener('click', () => {
