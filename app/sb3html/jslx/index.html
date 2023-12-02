@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
   <title>僵尸来袭</title>
+	<script type="application/javascript" src="../../../jQueryAssets/jquery-1.11.1.min.js"></script>
   <style>
     body {
       color: #000000;
@@ -321,7 +322,11 @@
       loadingScreen.hidden = true;
       if (true) {
         scaffolding.start();
-		$(".control-button green-flag-button active").before("<h3>封皓轩制作</h3>").css("margin-left","20px");
+		  setTimeout(() =>{
+			  console.log('等待三秒后执行')
+			  $(".green-flag-button").before("<h3>封皓轩制作</h3>").css("margin-left","20px");
+		  }, 3000);
+		
       } else {
         launchScreen.hidden = false;
         launchScreen.addEventListener('click', () => {

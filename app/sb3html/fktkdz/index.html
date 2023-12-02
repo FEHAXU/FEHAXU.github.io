@@ -7,6 +7,7 @@
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
   <title>疯狂坦克大战</title>
+	<script type="application/javascript" src="../../../jQueryAssets/jquery-1.11.1.min.js"></script>
   <style>
     body {
       color: #000000;
@@ -323,6 +324,10 @@
       loadingScreen.hidden = true;
       if (true) {
         scaffolding.start();
+		  setTimeout(() =>{
+			  console.log('等待三秒后执行')
+			  $(".green-flag-button").before("<h3>封皓轩制作</h3>").css("margin-left","20px");
+		  }, 3000);
       } else {
         launchScreen.hidden = false;
         launchScreen.addEventListener('click', () => {
