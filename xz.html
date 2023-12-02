@@ -62,6 +62,12 @@
 			font-size: 25px; 
 			font-family: 黑体;
 		}
+		.tybj{
+			border-radius: 25px;
+			margin: auto;
+			background-color: aquamarine;
+			width: 1000px;
+		}
 	</style>
 	<script src="jQueryAssets/jquery-1.11.1.min.js" type="text/javascript"></script>
 	<script src="scrollreveal.js"></script>
@@ -144,7 +150,19 @@
 		}
 		function qxkzxxz(){
 			$(".exexz").hide();
-			$(".zy").show(500);
+			switch(zl){
+				case 1:
+					$(".jslx").show(500)
+					break
+				case 0:
+					$(".zy").show(500);
+					break
+			}
+			
+		}
+		function openfktkdz(){
+			$(".zy").hide(500)
+			$('#fktkdz').show()
 		}
 		$(function(){
 			//alert("欢迎光临！")file:///H:/phpstudy_pro/WWW/fhx/app/%E5%83%B5%E5%B0%B8%E6%9D%A5%E8%A2%AD%E6%9C%80%E6%96%B0.sb3
@@ -152,6 +170,8 @@
 			$(".bxz").hide();
 			$(".jslx").hide();  
 			$(".exexz").hide();  //隐藏可执行文件下载页
+			$("#fktkdz").hide();
+			
 			ScrollReveal().reveal('.nr',{
 				delay: 0,
     			duration: 300,
@@ -207,7 +227,7 @@
 				</a>
 			</p>
 			<p align="center" class="nr">
-				<a href="app/sb3/疯狂坦克大战.sb3">
+				<a href="javascript:openfktkdz()">
 				<img src="img/反scratch.png" alt="" height="40" width="40">
 				疯狂坦克大战
 				</a>
@@ -236,6 +256,12 @@
 			<h1 align="center" style="font-size: 40px;">下载</h1>
 			<p align="center" style="font-size: 30px;">封皓轩制作</p>
 			<p align="center"><a href="app/sb3html/jslx/">在线游玩</a>||<a href="app/sb3/jslx/僵尸来袭.sb3">原sb3文件</a>||<a href="javascript:newxz(1);">可执行文件</a></p>
+			<p align="center"><input type="button" value="返回" onClick="qxjslx()" style="background-color: antiquewhite" class="button"></p>
+		</div>
+		<div align="center" class="tybj" id="fktkdz">
+			<h1 align="center" style="font-size: 40px;">下载</h1>
+			<p align="center" style="font-size: 30px;">封皓轩制作</p>
+			<p align="center"><a href="app/sb3html/fktkdz/">在线游玩</a>||<a href="app/sb3/疯狂坦克大战.sb3">原sb3文件</a>||<a href="javascript:alert('暂不支持')">可执行文件</a></p>
 			<p align="center"><input type="button" value="返回" onClick="qxjslx()" style="background-color: antiquewhite" class="button"></p>
 		</div>
 		<div align="center" class="bxz">
