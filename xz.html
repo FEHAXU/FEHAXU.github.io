@@ -87,7 +87,7 @@
               width: 1000px;
           }
 		  .tsc{
-			position: absolute;
+			position: fixed;
 			background-color: aqua;
 			transform: scale(1);
 			transition: transform 1s ease;
@@ -97,6 +97,20 @@
 			top: 15%;
 			border-bottom-color: black;
 			border: solid;
+		  }
+		  .gb{
+			  color: black;
+			  transform: scale(1);
+			  transition: color 1s ease
+                  ,font-size 1s ease;
+			  font-size: 40px;
+		  }
+		  .gb:hover{
+			  color: red;
+			  font-size: 50px;
+			  transition: color 1s ease
+                  ,font-size 1s ease;
+			  
 		  }
       </style>
       <script src="jQueryAssets/jquery-1.11.1.min.js" type="text/javascript"></script>
@@ -139,6 +153,7 @@
           function bzc(){
               $(".zy").hide(500);
               $(".bxz").show();
+			  
           }
           function bsl(){  //x86
               switch(zl){
@@ -307,7 +322,7 @@
           </div>
       </main>
 	  <div align="center" class="tsc" hidden>
-	  	<p align="center" style="font-size:40px;" id="biaoti">解决冰点<a href="javascript:$('.tsc').hide();">X</a></p>
+	  	<p align="center" style="font-size:40px;" id="biaoti">解决冰点<a href="javascript:$('.tsc').hide();" class="gb">X</a></p>
 		<p align="center" style="font-size:20px;" id="neirong">1、首先，我们按下冰点还原快捷键（Ctrl+Alt+Shift+F6），输入密码（默认为空），将弹出冰点还原的设置界面，将状态设置成“启动后解冻”。2、然后，点击“应用并重启”，当电脑重启后，发现系统托盘（右下角显时间处）冰点还原精灵的图标上多了一个“X”就代表已禁用了冰点还原的还原功能。3、最后再点击冰点还原应用图标，就会出现卸载界面。</p>
 	  </div>
   </body>
