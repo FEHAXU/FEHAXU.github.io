@@ -95,8 +95,8 @@
 			margin: auto;
 			left: 25%;
 			top: 15%;
-			border-bottom-color: black;
-			border: solid;
+			border-color:chartreuse;
+			border-style:solid;
 		  }
 		  .gb{
 			  color: black;
@@ -111,6 +111,19 @@
 			  transition: color 1s ease
                   ,font-size 1s ease;
 			  
+		  }
+		  .fk{
+			  background-color: aqua;
+			  height: 250px;
+			  width: 600px;
+			  z-index: 6;
+			  position: fixed;
+			  top: 25%;
+			  left: 25%;
+			  margin: auto;
+			  right: 25%;
+			  border-color:chartreuse;
+			border-style:solid;
 		  }
       </style>
       <script src="jQueryAssets/jquery-1.11.1.min.js" type="text/javascript"></script>
@@ -209,7 +222,13 @@
           }
 		  function zxywjslx(){
 			  alert("可以边刷视频边在后台加载哦")
-			  location.href = "https://fehaxu.github.io/app/sb3html/jslxx/"
+			  location.href = "https://fehaxu.github.io/app/sb3html/jslx/"
+		  }
+		  /*
+		  反馈确定按钮单击事件
+		  */
+		  function fkqd(){
+			  alert("上传失败！");
 		  }
           $(function(){
               //alert("欢迎光临！")file:///H:/phpstudy_pro/WWW/fhx/app/%E5%83%B5%E5%B0%B8%E6%9D%A5%E8%A2%AD%E6%9C%80%E6%96%B0.sb3
@@ -224,10 +243,24 @@
                   duration: 300,
                   reset: true
               });
+			  $(".fk").hide();
+			  //参数检测
+			  var queryString = window.location.search;
+			  if(queryString == "?cwfh"){
+				  alert("您还是先玩一些别的游戏吧，比如坦克大战")
+			  }
+			  if(queryString == "?fkjslx"){
+				  $(".fk").show();
+			  }
           })
       </script>
   </head>
   <body>
+	  <div align="center" class="fk">
+	  		<h1 align="center">反馈<a align="right" href="https://fehaxu.github.io/xz.html" style="text-decoration:underline;color: red;">X</a></h1>
+		  	<p align="center" style="font-size: 25px">请输入你的反馈内容<input type="text" value="" min="66" width="250px" size="25px" height="25px"><input type="button" class="button" value="确定" style="background-color: aquamarine;" onClick="fkqd();"></p>
+		    <div align="right" style="bottom: 0px;"><a style="text-decoration:underline;color:cadetblue;" href="weixin://contacts/profile/fhxyehappy">作者微信&#40测试&#41</a></div>
+	  </div>
       <div class="head">
           <h1 align="center" class="title">封封下载站!</h1>
       </div>
