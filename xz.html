@@ -125,6 +125,19 @@
 			  border-color:chartreuse;
 			border-style:solid;
 		  }
+		  .cw{
+			  background-color: aqua;
+			  height: 250px;
+			  width: 600px;
+			  z-index: 6;
+			  position: fixed;
+			  top: 25%;
+			  left: 25%;
+			  margin: auto;
+			  right: 25%;
+			  border-color:chartreuse;
+			border-style:solid;
+		  }
       </style>
       <script src="jQueryAssets/jquery-1.11.1.min.js" type="text/javascript"></script>
       <script src="scrollreveal.js"></script>
@@ -237,13 +250,14 @@
               $(".jslx").hide();  
               $(".exexz").hide();  //隐藏可执行文件下载页
               $("#fktkdz").hide();
-
+			  
               ScrollReveal().reveal('.nr',{
                   delay: 0,
                   duration: 300,
                   reset: true
               });
 			  $(".fk").hide();
+			  $("#jjssllxx").hide();
 			  //参数检测
 			  var queryString = window.location.search;
 			  if(queryString == "?cwfh"){
@@ -258,7 +272,13 @@
   <body>
 	  <div align="center" class="fk">
 	  		<h1 align="center">反馈<a align="right" href="https://fehaxu.github.io/xz.html" style="text-decoration:underline;color: red;">X</a></h1>
-		  	<p align="center" style="font-size: 25px">请输入你的反馈内容<input type="text" value="" min="66" width="250px" size="25px" height="25px"><input type="button" class="button" value="确定" style="background-color: aquamarine;" onClick="fkqd();"></p>
+		  	<p align="center" style="font-size: 25px">请输入你的反馈内容<input type="text" value="" min="66" width="250px" size="25px" height="25px"><input type="button" class="button" value="确定" style="background-color: aquamarine;" onClick=""></p>
+		    <div align="right" style="bottom: 0px;"><a style="text-decoration:underline;color:cadetblue;" href="weixin://contacts/profile/fhxyehappy">作者微信&#40测试&#41</a></div>
+	  </div>
+	  <div align="center" class="cw" id="jjssllxx">
+	  	<h1 align="center">错误<a align="right" href="https://fehaxu.github.io/xz.html" style="text-decoration:underline;color: red;">X</a></h1>
+		  	<p align="center" style="font-size: 25px">很抱歉给您带来了不足，您可以先游玩其他游戏！</p>
+		  	<p align="center"><input type="button" class="button" value="确定" style="background-color: aquamarine;" onClick="location.href='https://fehaxu.github.io/xz.html';"></p>
 		    <div align="right" style="bottom: 0px;"><a style="text-decoration:underline;color:cadetblue;" href="weixin://contacts/profile/fhxyehappy">作者微信&#40测试&#41</a></div>
 	  </div>
       <div class="head">
