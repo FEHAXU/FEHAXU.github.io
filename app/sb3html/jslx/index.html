@@ -7,10 +7,16 @@
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
   <title>僵尸来袭-全新版</title>
 	<script type="application/javascript">
-		function fk(){
-			if(confirm("停止游戏跳转至反馈页?")){
-				location.href="https://fehaxu.github.io/xz.html?fkjslx"
+		function fk(var a = true){
+			if(!a){
+				if(confirm("停止游戏跳转至反馈页?")){
+					location.href="https://fehaxu.github.io/xz.html?fkjslx"
+				}
 			}
+			else{
+				open("https://fehaxu.github.io/xz.html?fkjslx")
+			}
+			
 		}
 		function bq(){
 			$(".bq").show(500)
@@ -239,7 +245,7 @@
     <h1 class="loading-text">正在努力加载...</h1>
     
     <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
-	  <div align="center"><input type="button" onClick="fk()" style="border-style: none;" value="加载太慢?点我试试" id="hh" class="button"></div>
+	  <div align="center"><input type="button" onClick="fk(true)" style="border-style: none;" value="加载太慢?点我试试" id="hh" class="button"></div>
   </div>
 
   <div id="error" class="screen" hidden>
@@ -406,7 +412,7 @@
 			setTimeout(() =>{
 			  console.log('等待三秒后执行')
 			  $("<h3 class='sy' style='margin-left: 20px;'>封皓轩制作</h3>").insertAfter('.green-flag-button');
-			  $("<input type='button' value='反馈' onClick='fk()' style='border-style: none; font-size: 35px;margin-left:20px;' class='button'>").insertAfter('.sy')
+			  $("<input type='button' value='反馈' onClick='fk(true)' style='border-style: none; font-size: 30px;margin-left:20px;' class='button'>").insertAfter('.sy')
 		  }, 3000);
 		}
 		catch(a){
