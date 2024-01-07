@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="https://fehaxu.github.io/img/syy.jpg"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kill冰点还原精灵的“偏方”</title>
+    <style>
+      * {
+        margin: auto;
+      }
+      body {
+        background: -webkit-linear-gradient(
+          90deg,
+          #49c5ee,
+          #5f47d7
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          90deg,
+          #49c5ee,
+          #5f47d7
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .bt:hover {
+        color: aquamarine;
+        transition: color 1s ease;
+      }
+      .bt {
+        color: white;
+        transition: color 1s ease;
+      }
+      main {
+        background-color: #49c5ee;
+        border-style: inset;
+        border-color: aqua;
+      }
+      main_p {
+        font-family: 黑体;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h1
+        style="text-align: center; margin-top: 10%; font-size: 50px"
+        class="bt"
+      >
+        kill冰点还原精灵的“偏方”
+      </h1>
+    </div>
+    <main
+      style="
+        text-align: left;
+        color: white;
+        font-family: 黑体;
+        font-size: 25px;
+        width: 700px;
+      "
+    >
+      <h3 style="text-align: left">引言:</h3>
+      <p style="text-align: left">
+        众所不周知，冰点还原人人见都得喊一声--**而且不知道密码关都关不掉。。。。
+      </p>
+      <p style="text-align: left">
+        为了电脑使用者的自由，我们<span style="color: red">拒绝</span>冰点!!!!
+      </p>
+      <h3>正文:</h3>
+      <p>经过度娘&#40百度&#41的掐指一算，得出冰点没有更改MBR（主引导记录）而冰点则是利用驱动的形式加入操作系统的内核模块中来实现其还原功能的，它必须依附于原来的系统,一旦进入另外一个系统,它的还原功能就失效了。它的加载优先级非常高，而且加载之后 在当前系统不能停止不能禁用也不能删除。</p>
+      <h5>1.通过安全模式来删除驱动</h5>
+      <p>一般情况下，在安全模式下会禁止Windows系统中所有的自启动项，以及进程和驱动，只有最基本的系统服务才能启动。因此，可以尝试在安全模式下卸载驱动程序。步骤如下：
+        按住Win+R键后，在打开的运行窗口中输入"msconfig"
+        进入启动选项卡，并选择“安全启动”模式（选择 "网络" 可以让你进入安全模式的同时又拥有网络连接）
+        重启电脑，进入安全模式
+        定位到设备管理器处，右键点击要卸载的驱动程序并选择“卸载设备”
+        重启电脑，退出安全模式
+        以上步骤虽然比较繁琐，但是相对比较稳妥，一般情况下可以把驱动程序从系统中完全卸载掉。</p>
+      <h5>2.使用第三方工具卸载驱动</h5>
+      <p>如果以上方法仍然不能解决问题，那我们可以使用一些第三方的卸载工具来帮助我们卸载这些驱动程序，比如说驱动精灵。
+        驱动精灵是一款全能型的驱动程序卸载工具，它支持多个版本的Microsoft Windows操作系统。相对于各种防范措施，驱动精灵明显更易用。步骤如下：
+        下载并安装驱动精灵
+        在主界面中选择“已安装驱动程序”标签栏，列出所有电脑上已经安装的设备驱动程序
+        选中需要卸载的驱动程序后点击“卸载”按钮
+        等待卸载完成后重启电脑即可
+        需要注意的是，使用第三方软件来卸载驱动也有其潜在的风险，需要谨慎行事。</p>
+      <h5>3.清理残留文件和注册表项</h5>
+      <p>有时候即使把驱动卸载了，但还是会留下残留文件和注册表项，通过手动删除这些文件可以彻底清除残留物。步骤如下：
+        打开注册表编辑器
+        在HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum目录中定位要卸载的驱动所对应的子项，点击进入
+        将子项目中的值和名称一一删除，并重复以上两个步骤，直到完全卸载该驱动程序
+        定位到HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services子目录，将之前定位好的子项目均清理掉
+        在继续操作之前，请先备份计算机上的注册表.
+        最后，建议通过第三方软件或者cmd命令再次检查残留物并将其删除。</p>
+      <p style="margin-top: 50px;text-align: center;font-size: 15px;user-select: none;">文章转载于https://www.shangyouw.cn/shezhi/arc284344.html</p>
+    </main>
+  </body>
+</html>

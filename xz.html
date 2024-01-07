@@ -12,9 +12,6 @@
           .head{
               margin-top: 50px;
           }
-          .xz{
-
-          }
           .zy{
               border-radius: 25px;
               margin: auto;
@@ -160,16 +157,20 @@
 			  
           }
           function xzsb(){
-              alert("这个下载链接是github托管的，特别慢！建议使用共创编辑器！！！")
-              location.href = "https://desktop.turbowarp.org/";
+            if(window.confirm("在官网下载?下载链接是github托管的，特别慢！")){
+                location.href = "https://desktop.turbowarp.org/";
+            }
+            else{
+                location.href = "https://fehaxu.github.io/app/EXE/TurboWarp-Setup-1.9.2-x64.exe";
+            }
           }
           function gy(){
-              $(".zy").hide(500);
+              $(".zy").fadeOut(500)
               $(".gy").show();
           }
           function qxgy(){
               $(".gy").hide()
-              $(".zy").show(500);
+              $(".zy").fadeIn(500)
           }
           function qxbzc(){
               $(".bxz").hide()
@@ -243,13 +244,54 @@
 		  function fkqd(){
 			  alert("上传失败！");
 		  }
+          function xz(v =1){
+            switch(v){
+                case 1 :  //飞机大战
+                    $("#zxyw").on("click",function(){
+                        alert("暂不支持，需要可以反馈")
+                        return
+                    })
+                    $("#kywj").on("click",function(){
+                        location.href="https://fehaxu.github.io/app/sb3/飞机大战.sb3"
+                        return
+                    })
+                    $("#kywj").text("开源版sb3文件")
+                    $("#kzxwj").on("click",function(){
+                        alert("暂不支持，需要可以反馈")
+                        return
+                    })
+                    break
+                case 2 :   //绝杀记录
+                    $("#zxyw").on("click",function(){
+                        alert("暂不支持，需要可以反馈")
+                        return
+                    })
+                    $("#kywj").text("下载半半成品")
+                    $("#kywj").on("click",function(){
+                        if(confirm("当前游戏已停更，是个半半成品。仅供学习参考")){
+                            location.href="https://fehaxu.github.io/app/sb3/绝杀记录0.sb3"
+                        }
+                        return
+                    })
+                    $("#kzxwj").on("click",function(){
+                        alert("暂不支持，需要可以反馈")
+                        return
+                    })
+            }
+            $(".zy").hide(500)
+            $('#bzxz').show()
+          }
+          function bzxzXX(){
+            $(".zy").show(500)
+            $('#bzxz').hide()
+          }
           $(function(){
-              //alert("欢迎光临！")file:///H:/phpstudy_pro/WWW/fhx/app/%E5%83%B5%E5%B0%B8%E6%9D%A5%E8%A2%AD%E6%9C%80%E6%96%B0.sb3
               $(".gy").hide();
               $(".bxz").hide();
               $(".jslx").hide();  
               $(".exexz").hide();  //隐藏可执行文件下载页
               $("#fktkdz").hide();
+              $("#bzxz").hide();
 			  
               ScrollReveal().reveal('.nr',{
                   delay: 0,
@@ -271,8 +313,8 @@
   </head>
   <body>
 	  <div align="center" class="fk">
-	  		<h1 align="center">反馈<a align="right" href="https://fehaxu.github.io/xz.html" style="text-decoration:underline;color: red;">X</a></h1>
-		  	<p align="center" style="font-size: 25px">请输入你的反馈内容<input type="text" value="" min="66" width="250px" size="25px" height="25px"><input type="button" class="button" value="确定" style="background-color: aquamarine;" onClick=""></p>
+	  		<h1 align="center">反馈<a align="right" href="javascript:$('.fk').hide();" style="text-decoration:underline;color: red;">X</a></h1>
+		  	<p align="center" style="font-size: 25px">请输入你的反馈内容<form action="mailto:fhx6661@outlook.com"><input type="text" value="" min="66" width="250px" size="25px" height="25px"><input type="submit" class="button" value="确定" style="background-color: aquamarine;" onClick="alert('已调用')"></form></p>
 		    <div align="right" style="bottom: 0px;"><a style="text-decoration:underline;color:cadetblue;" href="weixin://contacts/profile/fhxyehappy">作者微信&#40测试&#41</a></div>
 	  </div>
 	  <div align="center" class="cw" id="jjssllxx">
@@ -282,7 +324,7 @@
 		    <div align="right" style="bottom: 0px;"><a style="text-decoration:underline;color:cadetblue;" href="weixin://contacts/profile/fhxyehappy">作者微信&#40测试&#41</a></div>
 	  </div>
       <div class="head">
-          <h1 align="center" class="title">封封下载站!</h1>
+          <h1 style="margin: auto;text-align: center;" class="title">封封下载站!</h1>
       </div>
   <main>
           <div align="center" class="xz">
@@ -317,7 +359,7 @@
                   </a>
               </p>
               <p align="center" class="nr anmooo">
-                  <a href="javascript:bzc();">
+                  <a href="javascript:xz(2);">
                   <img src="img/反scratch.png" alt="" height="40" width="40">
                   绝杀记录
                   </a>
@@ -329,7 +371,7 @@
                   </a>
               </p>
               <p align="center" class="nr anmooo">
-                  <a href="javascript:bzc();">
+                  <a href="javascript:xz(1)">
                   <img src="img/反scratch.png" alt="" height="40" width="40">
                   飞机大战
                   </a>
@@ -344,8 +386,17 @@
           <div align="center" class="gy">
               <h1 align="center" style="font-size: 40px;">关于</h1>
               <p align="center" style="font-size: 30px;">封皓轩制作</p>
-              <p align="center">版权 © 部分产品有版权</p>
+              <p align="center">版权 © 部分产品有版权 Copyright 2023-2024</p>
               <p align="center">最近更新 2024年1月5日21:54:11</p>
+              <div style="background-color: aquamarine;width: 300px; height:inherit+50px;">
+                <details>
+                <summary>下次更新与投票(标*的是给我看的)</summary>
+                <p style="text-align: left;"> 下次将修复僵尸来袭的一个bug</p>
+                <p style="text-align: left;">*将所有的align="center"尽数替换为HTML5所支持的</p>
+                <input type="button" value="我有想法！" onclick="$('.fk').show();" class="button" style="background-color: aqua;">
+                </details>
+              </div>
+              
               <p align="center"><input type="button" value="返回" onClick="qxgy()" style="background-color: antiquewhite" class="button"></p>
           </div>
           <div align="center" class="jslx">
@@ -360,6 +411,12 @@
               <p align="center"><a href="app/sb3html/fktkdz/">在线游玩</a>||<a href="app/sb3/疯狂坦克大战.sb3">开源版sb3文件</a>||<a href="javascript:alert('暂不支持')">可执行文件</a></p>
               <p align="center"><input type="button" value="返回" onClick="qxjslx()" style="background-color: antiquewhite" class="button"></p>
           </div>
+          <div align="center" class="tybj" id="bzxz">
+            <h1 align="center" style="font-size: 40px;">下载</h1>
+            <p align="center" style="font-size: 30px;">封皓轩制作</p>
+            <p align="center"><a id="zxyw">在线游玩</a>||<a id="kywj">开源版sb3文件</a>||<a id="kzxwj">可执行文件</a></p>
+            <p align="center"><input type="button" value="返回" onClick="bzxzXX()" style="background-color: antiquewhite" class="button"></p>
+        </div>
           <div align="center" class="bxz">
               <h1 align="center" style="font-size: 40px;">下载</h1>
               <p align="center" style="font-size: 30px;">封皓轩制作</p>
@@ -376,6 +433,7 @@
 	  <div align="center" class="tsc" hidden>
 	  	<p align="center" style="font-size:40px;" id="biaoti">解决冰点<a href="javascript:$('.tsc').hide();" class="gb">X</a></p>
 		<p align="center" style="font-size:20px;" id="neirong">1、首先，我们按下冰点还原快捷键（Ctrl+Alt+Shift+F6），输入密码（默认为空），将弹出冰点还原的设置界面，将状态设置成“启动后解冻”。2、然后，点击“应用并重启”，当电脑重启后，发现系统托盘（右下角显时间处）冰点还原精灵的图标上多了一个“X”就代表已禁用了冰点还原的还原功能。3、最后再点击冰点还原应用图标，就会出现卸载界面。</p>
+        <p align="center" style="font-size: 20px;color: red;">这种方法治标不治本，冰点没有重写MBR而是深入为系统内核模块。<a href="https://fehaxu.github.io/html/bdjj.html" style="text-decoration:underline;color:cadetblue;">解决方案(从未测试)</a></p>
 	  </div>
   </body>
   </html>
