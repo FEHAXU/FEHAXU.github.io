@@ -7,49 +7,46 @@
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
   <title>僵尸来袭-全新版</title>
 	<script type="application/javascript">
-		function fk(var a = true){
+		var lll = false;
+		function fk(a){
 			if(!a){
 				if(confirm("停止游戏跳转至反馈页?")){
+					window.removeEventListener('beforeunload',tcym);
 					location.href="https://fehaxu.github.io/xz.html?fkjslx"
 				}
 			}
 			else{
-				open("https://fehaxu.github.io/xz.html?fkjslx")
+				window.removeEventListener('beforeunload',tcym);
+				window.open("https://fehaxu.github.io/xz.html?fkjslx")
 			}
-			
 		}
 		function bq(){
 			$(".bq").show(500)
 		}
 		function backXzz(){
+			window.removeEventListener('beforeunload',tcym);
 			location.href = "https://fehaxu.github.io/xz.html?cwfh"
 		}
 		function ts(){
+			window.removeEventListener('beforeunload',tcym);
 			location.href = "weixin://contacts/profile/fhxyehappy"
 		}
 		// 定义退出页面事件处理函数
-	
+		function tcym(e){
+			var message = '再次加载游戏需要漫长的等待，确定退出?';
+  			e.preventDefault();
+  			e.returnValue = message;
+		}
 		// 注册退出页面事件
 		$(function(){
 			$(".bq").hide()
-			window.onbeforeunload = function(event) {
-   				var message = '再次加载游戏需要漫长的等待，确定退出?';
-   				event.returnValue = message; // 设置提示消息
-   				return message; // 返回提示消息，可以在一些浏览器中生效
-
-			};
+			window.addEventListener('beforeunload',tcym);
 			console.log("1")
 		})
 		
 	</script>
-	<script type="application/javascript">
+	<script type="text/javascript">
 		$(".bq").hide()
-		window.onbeforeunload = function(event) {
-   				var message = '再次加载游戏需要漫长的等待，确定退出?';
-   				event.returnValue = message; // 设置提示消息
-   				return message; // 返回提示消息，可以在一些浏览器中生效
-
-			};
 	</script>
   <style>
 	  #hh{
@@ -250,10 +247,10 @@
 
   <div id="error" class="screen" hidden>
     <h1>错误</h1>
-    <details>
+    
       <summary id="error-message" style="font-family: 黑体;"></summary>
-      <p id="error-stack" style="font-family: 黑体;"></p>
-    </details>
+      <p id="error-stack" style="font-family: 黑体;display: none;"></p>
+    
 	  <div align="center">
 	  <a style="color: cornflowerblue;" href="javascript:bq()">返回下载站</a>
 	  </div>
