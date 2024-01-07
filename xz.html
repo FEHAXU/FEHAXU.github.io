@@ -285,6 +285,31 @@
             $(".zy").show(500)
             $('#bzxz').hide()
           }
+          var b = 0;
+          function submitForm(){
+            b++;
+            if(b >= 4){
+                alert("提交次数过多！！")
+            }
+            else{
+                // Get the values from the input fields
+                var nr;
+                $("nrr").val(nr)
+                var name = "下载站反馈"+nr;
+                var email = "fhx6661@outlook.com";
+                
+                // Create a new XMLHttpRequest object
+                var xhr = new XMLHttpRequest();
+                
+                // Set up the request parameters and send it off
+                xhr.open("POST", "fhx6661@outlook.com");
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.send(`name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`);
+                
+                alert("已调用");
+            }
+            
+        }
           $(function(){
               $(".gy").hide();
               $(".bxz").hide();
@@ -314,7 +339,7 @@
   <body>
 	  <div align="center" class="fk">
 	  		<h1 align="center">反馈<a align="right" href="javascript:$('.fk').hide();" style="text-decoration:underline;color: red;">X</a></h1>
-		  	<p align="center" style="font-size: 25px">请输入你的反馈内容<form action="mailto:fhx6661@outlook.com"><input type="text" value="" min="66" width="250px" size="25px" height="25px"><input type="submit" class="button" value="确定" style="background-color: aquamarine;" onClick="alert('已调用')"></form></p>
+		  	<p align="center" style="font-size: 25px">请输入你的反馈内容<form action=mailto:fhx6661@outlook.com method=post enctype=text/plain h3><input type="text" value="" min="66" width="250px" size="25px" height="25px" id="nrr"><input type="submit" class="button" value="确定" style="background-color: aquamarine;" onclick="alert('骚瑞~因为技术限制&#40没有服务器&#41这个反馈功能只是一个摆设。您可以找到我的微信给我打赏，这样可以推进我的开发程度！！very thank you!')"></form></p>
 		    <div align="right" style="bottom: 0px;"><a style="text-decoration:underline;color:cadetblue;" href="weixin://contacts/profile/fhxyehappy">作者微信&#40测试&#41</a></div>
 	  </div>
 	  <div align="center" class="cw" id="jjssllxx">
