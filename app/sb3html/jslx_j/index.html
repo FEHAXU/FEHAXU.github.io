@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script src="https://fehaxu.github.io/jQueryAssets/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
+  <title>僵尸来袭-全新版</title>
+	<script type="application/javascript">
+		var lll = false;
+		function fk(a){
+			if(!a){
+				if(confirm("停止游戏跳转至反馈页?")){
+					window.removeEventListener('beforeunload',tcym);
+					location.href="https://fehaxu.github.io/xz.html?fkjslx"
+				}
+			}
+			else{
+				window.removeEventListener('beforeunload',tcym);
+				window.open("https://fehaxu.github.io/xz.html?fkjslx")
+			}
+		}
+		function bq(){
+			$(".bq").show(500)
+		}
+		function backXzz(){
+			window.removeEventListener('beforeunload',tcym);
+			location.href = "https://fehaxu.github.io/xz.html?cwfh"
+		}
+		function ts(){
+			window.removeEventListener('beforeunload',tcym);
+			location.href = "weixin://contacts/profile/fhxyehappy"
+		}
+		// 定义退出页面事件处理函数
+		function tcym(e){
+			var message = '再次加载游戏需要漫长的等待，确定退出?';
+  			e.preventDefault();
+  			e.returnValue = message;
+		}
+		// 注册退出页面事件
+		$(function(){
+			$(".bq").hide()
+			window.addEventListener('beforeunload',tcym);
+			console.log("1")
+		})
+		
+	</script>
+	<script type="text/javascript">
+		$(".bq").hide()
+	</script>
+  <style>
+	  #hh{
+		  border-radius: 5px;
+	  }
+	  .sy{
+		  
+	  }
+	  .button{
+		  border-radius: 10px; 
+              border-style: none;
+              font-family: 黑体;
+	  background-color: aqua;
+		  color:black;
+	  transition: background-color 1s ease,color 1s ease
+	}
+    .button:hover{
+		border-radius: 10px; 
+              border-style: none;
+              font-family: 黑体;
+	  background-color:darkblue;  
+		color: aliceblue;
+	  transition: background-color 1s ease,color 1s ease;
+	}
+	  
+    body {
+      color: #000000;
+      font-family: sans-serif;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    :root, body.is-fullscreen {
+      background-color: #ffffff;
+    }
+    [hidden] {
+      display: none !important;
+    }
+    h1 {
+      font-weight: normal;
+    }
+    a {
+      color: inherit;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    #app, #loading, #error, #launch {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: default;
+      user-select: none;
+      -webkit-user-select: none;
+      background-color: #ffffff;
+    }
+    #launch {
+      background-color: rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+    }
+    .green-flag {
+      width: 80px;
+      height: 80px;
+      padding: 16px;
+      border-radius: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      border: 3px solid hsla(0, 100%, 100%, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    #loading {
+      
+    }
+    .progress-bar-outer {
+      border: 1px solid currentColor;
+      height: 10px;
+      width: 200px;
+      max-width: 200px;
+    }
+    .progress-bar-inner {
+      height: 100%;
+      width: 0;
+      background-color: currentColor;
+    }
+    .loading-text, noscript {
+      font-weight: normal;
+      font-size: 36px;
+      margin: 0 0 16px;
+    }
+    .loading-image {
+      margin: 0 0 16px;
+    }
+    #error-message, #error-stack {
+      font-family: monospace;
+      max-width: 600px;
+      white-space: pre-wrap;
+      user-select: text;
+      -webkit-user-select: text;
+    }
+    #error-stack {
+      text-align: left;
+      max-height: 200px;
+      overflow: auto;
+    }
+    .control-button {
+      width: 2rem;
+      height: 2rem;
+      padding: 0.375rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      user-select: none;
+      -webkit-user-select: none;
+      cursor: pointer;
+      border: 0;
+      border-radius: 4px;
+    }
+    .control-button:hover {
+      background: #ff4c4c26;
+    }
+    .control-button.active {
+      background: #ff4c4c59;
+    }
+    .fullscreen-button {
+      background: white !important;
+    }
+    .standalone-fullscreen-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 0 4px;
+      padding: 4px;
+      cursor: pointer;
+    }
+    .sc-canvas {
+      cursor: auto;
+    }
+    .sc-monitor-root[data-opcode^="data_"] .sc-monitor-value-color {
+      background-color: #ff8c1a;
+    }
+    .sc-monitor-row-value-outer {
+      background-color: #fc662c;
+    }
+    .sc-monitor-row-value-editing .sc-monitor-row-value-outer {
+      background-color: #e25b27;
+    }
+    .bq{
+		  background-color: aqua;
+		  position: fixed;
+		z-index: 5;
+		  width: 50%;
+			margin: auto;
+			left: 25%;
+			top: 15%;
+			border-bottom-color: red;
+			border: solid;
+	  }
+  </style>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxMzUuNzUiIGhlaWdodD0iMTM3LjU4ODE1IiB2aWV3Qm94PSIwLDAsMTM1Ljc1LDEzNy41ODgxNSI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIyNDAuNSIgeTE9IjExNiIgeDI9IjI0MC41IiB5Mj0iMjQ0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgaWQ9ImNvbG9yLTEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2IxZmYwMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNzIuMjUsLTExMi41KSI+PGcgZGF0YS1wYXBlci1kYXRhPSJ7JnF1b3Q7aXNQYWludGluZ0xheWVyJnF1b3Q7OnRydWV9IiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMTc2LjUsMjQ0di0xMjhoMTI4djEyOHoiIGZpbGw9InVybCgjY29sb3ItMSkiIHN0cm9rZT0iI2ZmMDAwMCIgc3Ryb2tlLXdpZHRoPSI3Ii8+PHBhdGggZD0iTTIzNS43NSwxNTUuNWMwLC0xLjM4MDcxIDEuMTE5MjksLTIuNSAyLjUsLTIuNWMxLjM4MDcxLDAgMi41LDEuMTE5MjkgMi41LDIuNWMwLDEuMzgwNzEgLTEuMTE5MjksMi41IC0yLjUsMi41Yy0xLjM4MDcxLDAgLTIuNSwtMS4xMTkyOSAtMi41LC0yLjV6IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHBhdGggZD0iTTI2OC43NSwxNjkuNWMwLC0xLjM4MDcxIDEuMTE5MjksLTIuNSAyLjUsLTIuNWMxLjM4MDcxLDAgMi41LDEuMTE5MjkgMi41LDIuNWMwLDEuMzgwNzEgLTEuMTE5MjksMi41IC0yLjUsMi41Yy0xLjM4MDcxLDAgLTIuNSwtMS4xMTkyOSAtMi41LC0yLjV6IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHBhdGggZD0iTTI3MS4xNDM2NiwyMjcuMDc0NjVsMC44Mzg1NywwLjE1NzU5YzMuODg0NTcsLTMuNzE3NjggMi4yNjkyOSwtOC44NjM2MiAwLjg3MTQsLTEzLjUxOTg3Yy0wLjgzNjQ5LC0yLjc4NjI3IC0xLjQwNDczLC01Ljc4NDIyIC0zLjEzMTc0LC04LjI1MDU5Yy0wLjM2ODA3LC0wLjUyNTY0IC0wLjc5MzgzLC0xLjAwMjQ4IC0xLjI0ODk2LC0xLjQ1NDU0YzAuMzk5MjQsMS43NTM2NSAwLjgzNDg3LDMuNTIyNTIgMS4yMDUzNSw1LjM5ODI5YzEuMDYyMjMsNS4zNzgxMSAxLjI0MDQ3LDEyLjI5NDMyIDAuNDk1NzYsMTguMTQzMmMwLjQ4Mjg3LC0wLjM1MjQgMC45Njk2MSwtMC40NzQwOSAwLjk2OTYxLC0wLjQ3NDA5ek0yNjkuMDE3NzcsMTk3LjczMjI0YzAuMDQyMDMsMC4wNDIwMiA0LjYxNTA1LDQuNTk4MzkgNC43NjAzNCw0LjgwNTk5YzIuMDU5MzUsMi45NDI2MiAyLjg2ODIyLDYuNDEzNjMgMy44NjgyNiw5Ljc0OTQxYzIuMDEwMTYsNi43MDUyNSAzLjExNTEzLDEzLjA3MzE2IC0yLjEyODYsMTguNDgwMTNsLTMuMTYxNDMsMS4xNTc1OWMwLDAgLTEuODYxMDcsMC40NjUyNyAtMi43MzAyNiwtMS4wNDk1OWMtMC44MzQxMSw0LjMwNzQxIC0xLjI1MDI0LDcuNzAwOTggLTQuODc2MDgsMTAuNjI0MjNsLTIuNSwwLjVjMCwwIC0yLjUsMCAtMi41LC0yLjVjMCwtMi41IDIuNSwtMi41IDIuNSwtMi41bC0wLjUsMC41YzMuMjgzOTcsLTIuMTQ1ODMgMy41MDc4MywtOS4yOTgwNyAzLjUsLTEzYy0wLjAwOTYxLC00LjU0MTI5IDAuNDgyMTcsLTkuNDMzMTcgLTAuNDI4MjksLTEzLjkwNTUzYy0wLjU2Mjg2LC0yLjc2NDg0IC0xLjIyNzgsLTUuMzI5OTggLTEuNzQwNTQsLTcuOTMzNGMtMi44NTY1NiwwLjg5NzUxIC01Ljg5NjQ1LDIuMjAwMTcgLTguNzM2NjksMi43NjcyMmMtOC43MzMwNSwxLjc0MzU1IC0xNy43NDI3MywtMC4yMjE0OCAtMjUuMzUzMTcsLTQuNzY4MjhjLTQuNzY3NDQsLTIuODQ4MjYgLTkuNDgwNjEsLTYuOTQwMTcgLTEwLjIxNzEzLC0xMi44MTMyNmMtMC4xNjIzLC0xLjI5NDE1IC0wLjQxMjcsLTIuNzYyMTEgMC4yMTE4NiwtMy45MDcxNWMwLjc2NzM1LC0xLjQwNjggMi40ODA2MSwtMi42NDc1MyA0LjE0OTgxLC0zLjY4ODE5Yy0wLjA0NzA3LC0wLjA1NzMgLTAuMDk0MTQsLTAuMTE0OTIgLTAuMTQxMjEsLTAuMTcyODdjLTIuODIxMjcsLTEyLjUxNzA1IC0wLjI4OTE2LC0yNC4xMDczOSA2LjYzNTM4LC0zNC45MDM1NWMwLjk4ODg4LC0xLjU0MTc3IDEuNjk2NDYsLTMuMzIzMSAzLjAxNjQ0LC00LjU5Mjk3YzAuNjM4MTcsLTAuNjEzOTUgNS41Njk2NCwtMi4yNTk5OCA2LjQzNjIyLC0yLjQ5MTMyYzUuOTUzNTIsLTEuNTg5MyAxMy4wNCwtMy4wNjc3NSAxOS4xNjczNCwtMy4wOTA3MWMwLDAgMi4yNjE1NCwwIDIuNDgyNjYsMi4xNTA5OGMyLjk1NzY2LDAuNjM2MzQgNS43NDk3OCwxLjYwODA0IDguNjU5MDEsMi40MzI3N2MxLjAwMDY3LDAuMjgzNjcgMi4xMzM2MSwwLjE5ODMyIDMuMDM3OTgsMC43MTIwNmMzLjI3MjA3LDEuODU4NzggNS43MDM4Miw2LjU4NDM4IDcuOTY2NDEsOS4zNjI3MmMzLjYyMDAzLDQuNDQ1MiA4LjA4NDEzLDkuMDg0NjkgOS43ODcwNiwxNC43NjcwOGMxLjg4MTc5LDYuMjc5MjEgLTIuMjA5MzEsMTIuNDQ2NDMgLTQuMzMxMTgsMTcuOTI3ODRjLTQuNzkxNDEsNC45Mzg0NyAtMTAuMjk3MDQsOS4wMDk0IC0xNi43MTM0OSwxMS40ODMzNGMtMC4yMzA4OCwwLjA4OTAxIC0wLjk5MjM1LDAuNDIyNjkgLTEuOTE5MzYsMC44MjM5OGMwLjAzMDkxLDAuMjA1NTMgMC4wMzA5MSwwLjMzOTIxIDAuMDMwOTEsMC4zMzkyMWMwLDAuNjY0ODUgMC4wMjM2NiwxLjMxMzg4IDAuMDY3LDEuOTUwNzJjMC45ODA2NCwwLjA2MTM5IDEuNzAwNzYsMC43ODE1MiAxLjcwMDc2LDAuNzgxNTJ6TTI0MC43NDAyOSwxNzguNDUxNDVjLTIuMjI2MDEsMC40NDUyIC01LjUxMTk4LDAuNTA2MzIgLTcuNTcwOTQsMS4zNzMzOGMtMC44MTI0OSwwLjM0MjE0IC0xLjU1NTgsMC44MTMyMSAtMi4yNzkyLDEuMzIyNTJjMS45OTU1LDEuNTgxMSA0LjE3MzAxLDIuODU4MTIgNi41NjI4OCw0LjE2MTE0YzIuNDk3MTIsMS4zNjE0OCA1LjE4NywzLjk2MDQ3IDcuNzUzNjgsNC44ODE4MmMwLjkyNCwwLjMzMTY4IDEuOTUzNjEsMC4yMDExNiAyLjkyNTU5LDAuMzM5MWM0LjMwODU4LDAuNjExNDcgOS4yODA4MywxLjg4OTY1IDEzLjY0NDkzLDEuMDE1N2MxLjk4NDMsLTAuMzk3MzcgMy42OTQ5LC0xLjY1NzA2IDUuNTg0MzIsLTIuMzgxOTFjNS40MDE4MiwtMi4wNzIzMyAxMC4wODI3LC01LjUxMzUyIDE0LjI4NjUxLC05LjUxNjY2YzEuNTAzOTQsLTQuMTY2MDggNS4xOTc5OCwtOS4yODM2IDMuNjY4ODIsLTE0LjA3MjE2Yy0xLjU1MDEyLC00Ljg1NDIyIC01LjY5ODI3LC04Ljk1MTcxIC04Ljc5Nzk5LC0xMi43NTg2OGMtMS40NTk3LC0xLjc5Mjc1IC00LjEyMjkxLC02Ljg3MDM1IC02LjQ0ODU0LC04LjExMTUxYy0wLjU4MzE2LC0wLjMxMTIzIC0xLjMyMjI5LC0wLjEyMTU0IC0xLjk2MjAyLC0wLjI4Nzk0Yy0yLjk4MzY1LC0wLjc3NjAzIC01LjgwODM2LC0xLjg1OTM5IC04Ljg0ODYyLC0yLjQ2NDhsLTEuNTA5NzEsMC4wNDg1NWMwLDAgLTIuMDc1ODgsMCAtMi40NDQ0LC0xLjg5MTYzYy00LjkzNDg3LDAuMzYzOTcgLTEwLjMyNTM2LDEuNTg1NTkgLTE0Ljg4ODI2LDIuODAwOTJjLTEuNTQ4MjUsMC40MTIzNyAtMy40NjYyNCwwLjM0MTQgLTQuNTYzNzgsMS41MDg2OGMtMC45MDAxOSwwLjk1NzM4IC0xLjMwMjkyLDIuMjgyOSAtMS45ODM1NiwzLjQwNzAzYy01LjgwMjI5LDkuNTgyNzYgLTguMDkxMTcsMTguNjg2MzkgLTYuNDI1MDUsMjkuNzA2NzhjMS4yNDU4NSwtMC44ODIzMyAyLjQ4MzY3LC0xLjc3NzA1IDMuODg1NzEsLTIuMzU2NmMyLjMyNjA2LC0wLjk2MTUxIDUuOTA3MzgsLTEuMTIyMjkgOC40MjkwNiwtMS42MjY2MmwxLjk5MDI5LC0wLjA0ODU1YzAsMCAwLjQwNzc1LDAgMC44OTM5LDAuMTY0NjdjMC4yOTMxNiwtMC40NDIwNSAxLjA4MjI2LC0xLjM4Nzg2IDIuMzY3MywtMS4xODU4OWMwLjU0NTExLC0wLjc5NTgyIDEuMDczNTIsLTEuNjExNzMgMS44ODg2MywtMi4wODI4NGMyLjE5NjU3LC0xLjI2OTU0IDkuNTUyMTQsLTIuNjI3MzEgMTEuOTI1MzYsLTAuMzM3MjhjMS45NzU4NCwxLjkwNjU4IDMuODM2OTEsOS4zNzMxMiAyLjEyODk5LDEyLjEyMDk4Yy0yLjM0NTU4LDMuNzczODEgLTkuODkyMjUsNC45NjA3MyAtMTMuOTEwMzgsNC4zMTE4NGMtMS41NDI2MiwtMC4yNDkxMiAtMy4zNzU1MiwtMC4xNDU1MSAtNC41MzI4NCwtMS4xOTU0NGMtMS41NzU0MiwtMS40MjkyNCAtMS41NTQyOSwtNC4zMjcyMSAtMS4yMjcwNCwtNi44MTg0NXpNMjIzLjUxMzk4LDE4Ni4wNjAzOWMtMC43OTI3MSwxLjA1MTMgMC40MTkzMywyLjYzNDEzIDAuOTc1MTYsMy44Mjc3MmMxLjY1MjUsMy41NDg2MiA1Ljk0OTQsNS44MjE0MSA5LjI4NTAxLDcuMzMxMjljMi4wNzYwNSwwLjkzOTczIDQuMjU4MDYsMS42MjUyNyA2LjM4MjE3LDIuNDUwNjZjMC45MzU3MSwwLjM2MzYgMS42ODczLDEuMTgyNzIgMi42NjgwNywxLjM5NjgyYzYuNDIzODksMS40MDIyOSAxMy40OTAzNywtMS42NjEyNCAxOS41MzQxNCwtMy40MTE4Yy0wLjAyOTgsLTAuMzY5MzkgLTAuMDUzOTUsLTAuNzQyMTkgLTAuMDcxODQsLTEuMTE4OTVjLTQuODAwMTUsMC44MzAyOCAtMTAuMjI0NDUsLTAuMjk1MzkgLTE0LjkxODk3LC0xLjA2NTUzYy0xLjM1Nzc0LC0wLjIyMjc0IC0yLjc4MjcxLC0wLjE4NyAtNC4wNzQ0MSwtMC42NjA5Yy0yLjc3NTM2LC0xLjAxODIzIC01LjU4NjE3LC0zLjY2NjU5IC04LjI0NjMyLC01LjExODE4Yy0zLjI3Njk2LC0xLjc4ODE4IC01LjkzOTA1LC0zLjUwMzIxIC04LjM5Njg3LC01LjcyOTc1Yy0xLjI0MTkxLDAuNzQxNDYgLTIuODcxOCwxLjc0ODA2IC0zLjEzNjEzLDIuMDk4NjJ6TTI0Ni41MjU3MSwxNzcuNTM3NjhjLTAuMTQzNywxLjA2NTEgLTAuMTk3NzQsMi4xNDQ1NSAtMC4yODc4NywzLjIxNTk4Yy0wLjAyNzQ1LDAuMzI2MjkgLTAuNTI3MTUsMC43Nzc4NSAtMC4yNDg4LDAuOTUwM2MwLjQxOTQsMC4yNTk4NSAwLjk3NDU0LC0wLjE2ODI3IDEuNDY3MTYsLTAuMTk1NDRjMS43Njg2LC0wLjA5NzU1IDcuOTkxOCwwLjMzOTMyIDkuMDg5NjIsLTEuNjg4MTZjMC4yOTI3MSwtMC41NDA1OCAtMC4yNTY0OCwtMS4yMDY4NyAtMC4yOTU4MiwtMS44MjAzNmMtMC4wNzg5MywtMS4yMzExMSAwLjQwNDYsLTIuOTYwMzUgLTAuNTc1MTksLTQuMDU4NjZjLTAuMjYwMDgsLTAuMjkxNTUgLTAuNzgwNSwwLjA0MTUgLTEuMTcxMTUsMC4wNDY1Yy0zLjA1ODY1LDAuMDM5MTUgLTQuNDU3MjcsLTAuMDA4NjQgLTYuMzAxNDksMi41NzM5YzAsMCAtMC42NjgwNSwwLjgzNTA3IC0xLjY3NjQ3LDAuOTc1OTR6IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHBhdGggZD0iTTE3NS43NSwyNDUuNXYtNTdjMCwwIDguMTUwNTYsMS4wOTQ4NSAxMi45Njc1LDEuNzQxOTFjNi4wNjEyNywwLjgxNDIgMTkuMDMyNSwxNy4yNTgwOSAxOS4wMzI1LDE3LjI1ODA5YzAsMCAyLjE0ODkyLDEyLjU2MjkzIDMuMjI4NjgsMTguODc1MzZjMS4wODY4Niw2LjM1Mzk3IC0xLjIyODY4LDIwLjEyNDY0IC0xLjIyODY4LDIwLjEyNDY0eiIgZmlsbD0iIzAwZmZmZiIgc3Ryb2tlPSIjMDBmZmZmIiBzdHJva2Utd2lkdGg9IjciLz48cGF0aCBkPSJNMTkwLjI1LDIxMi43NWMwLC01LjEwODYzIDQuMTQxMzcsLTkuMjUgOS4yNSwtOS4yNWM1LjEwODYzLDAgOS4yNSw0LjE0MTM3IDkuMjUsOS4yNWMwLDUuMTA4NjMgLTQuMTQxMzcsOS4yNSAtOS4yNSw5LjI1Yy01LjEwODYzLDAgLTkuMjUsLTQuMTQxMzcgLTkuMjUsLTkuMjV6IiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMwMGZmZmYiIHN0cm9rZS13aWR0aD0iNyIvPjwvZz48L2c+PC9zdmc+PCEtLXJvdGF0aW9uQ2VudGVyOjY3Ljc1OjY3LjUtLT4=">
+</head>
+<body>
+	<div align="center" class="bq" style="display:none;">
+		<h3 align="center" style="color: crimson;font-family: 黑体;">骚瑞<a href="javascript:$('.bq').hide(500);" style="color: red;">X</a></h3>
+		<h4 align="center" style="color: crimson;font-family: 黑体;">很抱歉给您带来了不便，我会尽快修复这个错误</h4>
+		<input type="button" class="button" value="返回下载站" onClick="backXzz()"><input type="button" class="button" value="投诉" style="color: red;" onClick="ts()">
+	</div>
+  <div id="app"></div>
+
+  <div id="launch" class="screen" hidden title="点击开始游戏">
+    <div class="green-flag">
+      <svg viewBox="0 0 16.63 17.5" width="42" height="44">
+        <defs><style>.cls-1,.cls-2{fill:#4cbf56;stroke:#45993d;stroke-linecap:round;stroke-linejoin:round;}.cls-2{stroke-width:1.5px;}</style></defs>
+        <path class="cls-1" d="M.75,2A6.44,6.44,0,0,1,8.44,2h0a6.44,6.44,0,0,0,7.69,0V12.4a6.44,6.44,0,0,1-7.69,0h0a6.44,6.44,0,0,0-7.69,0"/>
+        <line class="cls-2" x1="0.75" y1="16.75" x2="0.75" y2="0.75"/>
+      </svg>
+	  </div>
+  </div>
+
+  <div id="loading" class="screen">
+    <noscript>请启用JavaScript，这样才能继续游戏</noscript>
+    <h1 class="loading-text">正在努力加载...</h1>
+    
+    <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
+	  <div align="center"><input type="button" onClick="fk(true)" style="border-style: none;" value="加载太慢?点我试试" id="hh" class="button"></div>
+  </div>
+
+  <div id="error" class="screen" hidden>
+    <h1>错误</h1>
+    
+      <summary id="error-message" style="font-family: 黑体;"></summary>
+      <p id="error-stack" style="font-family: 黑体;display: none;"></p>
+    
+	  <div align="center">
+	  <a style="color: cornflowerblue;" href="javascript:bq()">返回下载站</a>
+	  </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const appElement = document.getElementById('app');
+    const launchScreen = document.getElementById('launch');
+    const loadingScreen = document.getElementById('loading');
+    const loadingInner = document.getElementById('loading-inner');
+    const errorScreen = document.getElementById('error');
+    const errorScreenMessage = document.getElementById('error-message');
+    const errorScreenStack = document.getElementById('error-stack');
+
+    const handleError = (error) => {
+      console.error(error);
+      if (!errorScreen.hidden) return;
+      errorScreen.hidden = false;
+      errorScreenMessage.textContent = '' + error;
+      let debug = error && error.stack || 'no stack';
+      debug += '\nUser agent: ' + navigator.userAgent;
+      errorScreenStack.textContent = debug;
+    };
+    const setProgress = (progress) => {
+      if (loadingInner) loadingInner.style.width = progress * 100 + '%';
+    };
+    const interpolate = (a, b, t) => a + t * (b - a);
+
+    try {
+      setProgress(0.1);
+
+      const scaffolding = new Scaffolding.Scaffolding();
+      scaffolding.width = 480;
+      scaffolding.height = 360;
+      scaffolding.resizeMode = "preserve-ratio";
+      scaffolding.editableLists = false;
+      scaffolding.usePackagedRuntime = false;
+      scaffolding.setup();
+      scaffolding.appendTo(appElement);
+
+      const vm = scaffolding.vm;
+      window.scaffolding = scaffolding;
+      window.vm = scaffolding.vm;
+      window.Scratch = {
+        vm,
+        renderer: vm.renderer,
+        audioEngine: vm.runtime.audioEngine,
+        bitmapAdapter: vm.runtime.v2BitmapAdapter,
+        videoProvider: vm.runtime.ioDevices.video.provider
+      };
+
+      scaffolding.setUsername("FHX".replace(/#/g, () => Math.floor(Math.random() * 10)));
+      scaffolding.setAccentColor("#ff4c4c");
+
+     // scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], ""));
+
+      const greenFlagButton = document.createElement('img');
+      greenFlagButton.src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.63 17.5"><path d="M.75 2a6.44 6.44 0 017.69 0h0a6.44 6.44 0 007.69 0v10.4a6.44 6.44 0 01-7.69 0h0a6.44 6.44 0 00-7.69 0" fill="#4cbf56" stroke="#45993d" stroke-linecap="round" stroke-linejoin="round"/><path stroke-width="1.5" fill="#4cbf56" stroke="#45993d" stroke-linecap="round" stroke-linejoin="round" d="M.75 16.75v-16"/></svg>');
+      greenFlagButton.className = 'control-button green-flag-button';
+      greenFlagButton.draggable = false;
+      greenFlagButton.addEventListener('click', () => {
+        scaffolding.greenFlag();
+      });
+      scaffolding.addEventListener('PROJECT_RUN_START', () => {
+        greenFlagButton.classList.add('active');
+      });
+      scaffolding.addEventListener('PROJECT_RUN_STOP', () => {
+        greenFlagButton.classList.remove('active');
+      });
+      scaffolding.addControlButton({
+        element: greenFlagButton,
+        where: 'top-left'
+      });
+
+      vm.setTurboMode(false);
+      if (vm.setInterpolation) vm.setInterpolation(false);
+      if (vm.setFramerate) vm.setFramerate(30);
+      if (vm.renderer.setUseHighQualityRender) vm.renderer.setUseHighQualityRender(false);
+      if (vm.setRuntimeOptions) vm.setRuntimeOptions({
+        fencing: false,
+        miscLimits: false,
+        maxClones: 9999999999,
+      });
+      if (vm.setCompilerOptions) vm.setCompilerOptions({
+        enabled: true,
+        warpTimer: false
+      });
+      if (vm.renderer.setMaxTextureDimension) vm.renderer.setMaxTextureDimension(2048);
+
+      if (typeof ScaffoldingAddons !== 'undefined') {
+        ScaffoldingAddons.run(scaffolding, {"gamepad":false,"pointerlock":false,"specialCloudBehaviors":false,"unsafeCloudBehaviors":false,"pause":false});
+      }
+
+      scaffolding.setExtensionSecurityManager({
+        getSandboxMode: () => 'unsandboxed',
+        canLoadExtensionFromProject: () => true
+      });
+      for (const extension of ["data:text/javascript;,(function(Scratch)%20%7B%20%2F%2F%20Name%3A%20Fetch%0D%0A%2F%2F%20ID%3A%20fetch%0D%0A%2F%2F%20Description%3A%20Make%20requests%20to%20the%20broader%20internet.%0D%0A%0D%0A(function%20(Scratch)%20%7B%0D%0A%20%20%22use%20strict%22%3B%0D%0A%0D%0A%20%20class%20Fetch%20%7B%0D%0A%20%20%20%20getInfo()%20%7B%0D%0A%20%20%20%20%20%20return%20%7B%0D%0A%20%20%20%20%20%20%20%20id%3A%20%22fetch%22%2C%0D%0A%20%20%20%20%20%20%20%20name%3A%20%22Fetch%22%2C%0D%0A%20%20%20%20%20%20%20%20blocks%3A%20%5B%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22get%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.REPORTER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22GET%20%5BURL%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20URL%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22https%3A%2F%2Fextensions.turbowarp.org%2Fhello.txt%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%5D%2C%0D%0A%20%20%20%20%20%20%7D%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20get(args)%20%7B%0D%0A%20%20%20%20%20%20return%20Scratch.fetch(args.URL)%0D%0A%20%20%20%20%20%20%20%20.then((r)%20%3D%3E%20r.text())%0D%0A%20%20%20%20%20%20%20%20.catch(()%20%3D%3E%20%22%22)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%7D%0D%0A%0D%0A%20%20Scratch.extensions.register(new%20Fetch())%3B%0D%0A%7D)(Scratch)%3B%0D%0A%20%7D)(Scratch)%3B","data:text/javascript;,(function(Scratch)%20%7B%20%2F%2F%20Name%3A%20More%20Comparisons%0D%0A%2F%2F%20ID%3A%20nonameawacomparisons%0D%0A%2F%2F%20Description%3A%20More%20comparison%20blocks.%0D%0A%2F%2F%20By%3A%20NOname-awa%0D%0A%0D%0A(function%20(Scratch)%20%7B%0D%0A%20%20%22use%20strict%22%3B%0D%0A%20%20const%20quadrilateral%20%3D%0D%0A%20%20%20%20%22data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI3Ny4wMjc4MSIgaGVpZ2h0PSI1NC44MDY1NCIgdmlld0JveD0iMCwwLDc3LjAyNzgxLDU0LjgwNjU0Ij48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjAxLjUwNDMsLTE1Mi4yMTk3MykiPjxnIGRhdGEtcGFwZXItZGF0YT0ieyZxdW90O2lzUGFpbnRpbmdMYXllciZxdW90Ozp0cnVlfSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMjI4LjE3ODc4LDE1NS40NzM3NGw0Ni40MDEwMywxOS44ODYxNmwtMjIuNTM3NjQsMjkuMTY2MzZoLTQ2LjYyMTk5eiIvPjwvZz48L2c%2BPC9zdmc%2B%22%3B%0D%0A%20%20class%20MoreComparisons%20%7B%0D%0A%20%20%20%20getInfo()%20%7B%0D%0A%20%20%20%20%20%20return%20%7B%0D%0A%20%20%20%20%20%20%20%20id%3A%20%22nonameawacomparisons%22%2C%0D%0A%20%20%20%20%20%20%20%20name%3A%20%22More%20Comparisons%22%2C%0D%0A%20%20%20%20%20%20%20%20color1%3A%20%22%2300a889%22%2C%0D%0A%20%20%20%20%20%20%20%20color2%3A%20%22%231e8c76%22%2C%0D%0A%20%20%20%20%20%20%20%20color3%3A%20%22%231e8c76%22%2C%0D%0A%20%20%20%20%20%20%20%20blocks%3A%20%5B%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22true%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22true%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20disableMonitor%3A%20true%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22false%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22false%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20disableMonitor%3A%20true%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22boolean%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22booleanToInt%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.REPORTER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%22---%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22equal%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%E2%A9%B5%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22A%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22a%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22equalNegative%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%3D-%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%225%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22-5%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22equalPlusMinus%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%3D%C2%B1%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%225%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22-5%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22notEqual%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%E2%89%A0%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.STRING%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22almostEqual2n%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%E2%89%88%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%225.5%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%226%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22almostEqual3n%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%E2%89%88%20%5Bb%5D%20%C2%B1%20%5Bc%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%225%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%226%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20c%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%221%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22xor%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%5E%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%22---%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22equalOrGreater%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%E2%89%A5%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2250%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22equalOrLess%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%E2%89%A4%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2250%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22between%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%3C%20%5Bb%5D%20%3C%20%5Bc%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20c%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22betweenEqual%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%E2%89%A4%20%5Bb%5D%20%E2%89%A4%20%5Bc%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20c%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22%5Cn%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%22---%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22vertical%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5Ba%5D%20%E2%8A%A5%20%5Bb%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.ANGLE%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20b%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.ANGLE%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2290%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22segment_one%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%E2%8E%B5%20(%5Bx1%5D%2C%5By1%5D)%20(%5Bx2%5D%2C%5By2%5D)%20%3D%20%5Bn%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x1%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22-100%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y1%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x2%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y2%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20n%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22100%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22segment_two%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%E2%8E%B5%20(%5Bx11%5D%2C%5By11%5D)%20(%5Bx12%5D%2C%5By12%5D)%20%3D%20%E2%8E%B5%20(%5Bx21%5D%2C%5By21%5D)%20(%5Bx22%5D%2C%5By22%5D)%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x11%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22-100%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y11%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x12%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y12%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22-100%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x21%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22100%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y21%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x22%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y22%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22100%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22segment%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.REPORTER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%E2%8E%B5%20(%5Bx1%5D%2C%5By1%5D)%20(%5Bx2%5D%2C%5By2%5D)%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x1%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22-100%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y1%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x2%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y2%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%22---%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22Squadrilateral_one%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.BOOLEAN%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5BIMAGE%5D%20(%5Bx1%5D%2C%5By1%5D)%20(%5Bx2%5D%2C%5By2%5D)%20(%5Bx3%5D%2C%5By3%5D)%20(%5Bx4%5D%2C%5By4%5D)%20%3D%20%5Bn%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x1%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y1%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2210%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x2%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2210%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y2%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2210%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x3%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2210%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y3%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x4%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y4%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20n%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%22100%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20IMAGE%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.IMAGE%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dataURI%3A%20quadrilateral%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flipRTL%3A%20true%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22Squadrilateral%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.REPORTER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22%5BIMAGE%5D%20(%5Bx1%5D%2C%5By1%5D)%20(%5Bx2%5D%2C%5By2%5D)%20(%5Bx3%5D%2C%5By3%5D)%20(%5Bx4%5D%2C%5By4%5D)%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x1%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y1%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2210%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x2%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2210%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y2%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2210%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x3%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%2210%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y3%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20x4%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20y4%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20%220%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20IMAGE%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.IMAGE%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dataURI%3A%20quadrilateral%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20flipRTL%3A%20true%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%5D%2C%0D%0A%20%20%20%20%20%20%7D%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20true()%20%7B%0D%0A%20%20%20%20%20%20return%20true%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20false()%20%7B%0D%0A%20%20%20%20%20%20return%20false%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20boolean(args)%20%7B%0D%0A%20%20%20%20%20%20return%20Scratch.Cast.toBoolean(args.a)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20booleanToInt(args)%20%7B%0D%0A%20%20%20%20%20%20if%20(Scratch.Cast.toBoolean(args.a))%20%7B%0D%0A%20%20%20%20%20%20%20%20return%201%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20return%200%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20equal(args)%20%7B%0D%0A%20%20%20%20%20%20return%20args.a%20%3D%3D%20args.b%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20equalNegative(args)%20%7B%0D%0A%20%20%20%20%20%20if%20(isNaN(args.a)%20%7C%7C%20isNaN(args.b))%20%7B%0D%0A%20%20%20%20%20%20%20%20return%20false%3B%0D%0A%20%20%20%20%20%20%7D%20else%20%7B%0D%0A%20%20%20%20%20%20%20%20return%20args.a%20%3D%3D%200%20-%20args.b%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20equalPlusMinus(args)%20%7B%0D%0A%20%20%20%20%20%20if%20(isNaN(args.a)%20%7C%7C%20isNaN(args.b))%20%7B%0D%0A%20%20%20%20%20%20%20%20return%20false%3B%0D%0A%20%20%20%20%20%20%7D%20else%20%7B%0D%0A%20%20%20%20%20%20%20%20return%20args.a%20%3D%3D%200%20-%20args.b%20%7C%7C%20args.a%20%3D%3D%20args.b%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20almostEqual2n(args)%20%7B%0D%0A%20%20%20%20%20%20return%20Math.round(args.a)%20%3D%3D%20Math.round(args.b)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20almostEqual3n(args)%20%7B%0D%0A%20%20%20%20%20%20return%20Math.abs(args.a%20-%20args.b)%20%3C%3D%20args.c%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20between(args)%20%7B%0D%0A%20%20%20%20%20%20return%20args.a%20%3C%20args.b%20%26%26%20args.b%20%3C%20args.c%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20betweenEqual(args)%20%7B%0D%0A%20%20%20%20%20%20return%20args.a%20%3C%3D%20args.b%20%26%26%20args.b%20%3C%3D%20args.c%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20notEqual(args)%20%7B%0D%0A%20%20%20%20%20%20return%20args.a%20!%3D%20args.b%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20xor(args)%20%7B%0D%0A%20%20%20%20%20%20return%20Scratch.Cast.toBoolean(args.a)%20!%3D%3D%20Scratch.Cast.toBoolean(args.b)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20equalOrGreater(args)%20%7B%0D%0A%20%20%20%20%20%20return%20args.a%20%3E%3D%20args.b%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20equalOrLess(args)%20%7B%0D%0A%20%20%20%20%20%20return%20args.a%20%3C%3D%20args.b%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20vertical(args)%20%7B%0D%0A%20%20%20%20%20%20if%20(isNaN(args.a)%20%7C%7C%20isNaN(args.b))%20%7B%0D%0A%20%20%20%20%20%20%20%20return%20false%3B%0D%0A%20%20%20%20%20%20%7D%20else%20%7B%0D%0A%20%20%20%20%20%20%20%20return%20(args.a%20-%20(args.b%20-%2090))%20%25%20180%20%3D%3D%200%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20segment_one(args)%20%7B%0D%0A%20%20%20%20%20%20return%20(%0D%0A%20%20%20%20%20%20%20%20Math.round(%0D%0A%20%20%20%20%20%20%20%20%20%20Math.sqrt(%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20Math.pow(args.x1%20-%20args.x2%2C%202)%20%2B%20Math.pow(args.y1%20-%20args.y2%2C%202)%0D%0A%20%20%20%20%20%20%20%20%20%20)%0D%0A%20%20%20%20%20%20%20%20)%20%3D%3D%20args.n%0D%0A%20%20%20%20%20%20)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20segment_two(args)%20%7B%0D%0A%20%20%20%20%20%20return%20(%0D%0A%20%20%20%20%20%20%20%20Math.round(%0D%0A%20%20%20%20%20%20%20%20%20%20Math.sqrt(%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20Math.pow(args.x11%20-%20args.x12%2C%202)%20%2B%20Math.pow(args.y11%20-%20args.y12%2C%202)%0D%0A%20%20%20%20%20%20%20%20%20%20)%0D%0A%20%20%20%20%20%20%20%20)%20%3D%3D%0D%0A%20%20%20%20%20%20%20%20Math.round(%0D%0A%20%20%20%20%20%20%20%20%20%20Math.sqrt(%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20Math.pow(args.x21%20-%20args.x22%2C%202)%20%2B%20Math.pow(args.y21%20-%20args.y22%2C%202)%0D%0A%20%20%20%20%20%20%20%20%20%20)%0D%0A%20%20%20%20%20%20%20%20)%0D%0A%20%20%20%20%20%20)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20segment(args)%20%7B%0D%0A%20%20%20%20%20%20return%20Math.sqrt(%0D%0A%20%20%20%20%20%20%20%20Math.pow(args.x1%20-%20args.x2%2C%202)%20%2B%20Math.pow(args.y1%20-%20args.y2%2C%202)%0D%0A%20%20%20%20%20%20)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20Squadrilateral_one(args)%20%7B%0D%0A%20%20%20%20%20%20let%20points%20%3D%20%5B%0D%0A%20%20%20%20%20%20%20%20%5Bargs.x1%2C%20args.y1%5D%2C%0D%0A%20%20%20%20%20%20%20%20%5Bargs.x2%2C%20args.y2%5D%2C%0D%0A%20%20%20%20%20%20%20%20%5Bargs.x3%2C%20args.y3%5D%2C%0D%0A%20%20%20%20%20%20%20%20%5Bargs.x4%2C%20args.y4%5D%2C%0D%0A%20%20%20%20%20%20%5D%3B%0D%0A%20%20%20%20%20%20let%20area%20%3D%200%3B%0D%0A%20%20%20%20%20%20let%20n%20%3D%20points.length%3B%0D%0A%20%20%20%20%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0D%0A%20%20%20%20%20%20%20%20let%20x1%20%3D%20points%5Bi%5D%5B0%5D%3B%0D%0A%20%20%20%20%20%20%20%20let%20y1%20%3D%20points%5Bi%5D%5B1%5D%3B%0D%0A%20%20%20%20%20%20%20%20let%20x2%20%3D%20points%5B(i%20%2B%201)%20%25%20n%5D%5B0%5D%3B%0D%0A%20%20%20%20%20%20%20%20let%20y2%20%3D%20points%5B(i%20%2B%201)%20%25%20n%5D%5B1%5D%3B%0D%0A%20%20%20%20%20%20%20%20area%20%2B%3D%20x1%20*%20y2%3B%0D%0A%20%20%20%20%20%20%20%20area%20-%3D%20x2%20*%20y1%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20area%20%3D%20Math.abs(area)%20%2F%202%3B%0D%0A%20%20%20%20%20%20return%20Math.round(area)%20%3D%3D%20args.n%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20Squadrilateral(args)%20%7B%0D%0A%20%20%20%20%20%20let%20points%20%3D%20%5B%0D%0A%20%20%20%20%20%20%20%20%5Bargs.x1%2C%20args.y1%5D%2C%0D%0A%20%20%20%20%20%20%20%20%5Bargs.x2%2C%20args.y2%5D%2C%0D%0A%20%20%20%20%20%20%20%20%5Bargs.x3%2C%20args.y3%5D%2C%0D%0A%20%20%20%20%20%20%20%20%5Bargs.x4%2C%20args.y4%5D%2C%0D%0A%20%20%20%20%20%20%5D%3B%0D%0A%20%20%20%20%20%20let%20area%20%3D%200%3B%0D%0A%20%20%20%20%20%20let%20n%20%3D%20points.length%3B%0D%0A%20%20%20%20%20%20for%20(let%20i%20%3D%200%3B%20i%20%3C%20n%3B%20i%2B%2B)%20%7B%0D%0A%20%20%20%20%20%20%20%20let%20x1%20%3D%20points%5Bi%5D%5B0%5D%3B%0D%0A%20%20%20%20%20%20%20%20let%20y1%20%3D%20points%5Bi%5D%5B1%5D%3B%0D%0A%20%20%20%20%20%20%20%20let%20x2%20%3D%20points%5B(i%20%2B%201)%20%25%20n%5D%5B0%5D%3B%0D%0A%20%20%20%20%20%20%20%20let%20y2%20%3D%20points%5B(i%20%2B%201)%20%25%20n%5D%5B1%5D%3B%0D%0A%20%20%20%20%20%20%20%20area%20%2B%3D%20x1%20*%20y2%3B%0D%0A%20%20%20%20%20%20%20%20area%20-%3D%20x2%20*%20y1%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20area%20%3D%20Math.abs(area)%20%2F%202%3B%0D%0A%20%20%20%20%20%20return%20area%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%7D%0D%0A%20%20Scratch.extensions.register(new%20MoreComparisons())%3B%0D%0A%7D)(Scratch)%3B%0D%0A%20%7D)(Scratch)%3B","data:text/javascript;,(function(Scratch)%20%7B%20%2F%2F%20Name%3A%20Stretch%0D%0A%2F%2F%20ID%3A%20stretch%0D%0A%2F%2F%20Description%3A%20Stretch%20sprites%20horizontally%20or%20vertically.%0D%0A%0D%0A(function%20(Scratch)%20%7B%0D%0A%20%20%22use%20strict%22%3B%0D%0A%0D%0A%20%20const%20STRETCH_X%20%3D%20Symbol(%22stretch.x%22)%3B%0D%0A%20%20const%20STRETCH_Y%20%3D%20Symbol(%22stretch.y%22)%3B%0D%0A%0D%0A%20%20const%20vm%20%3D%20Scratch.vm%3B%0D%0A%0D%0A%20%20%2F**%0D%0A%20%20%20*%20%40param%20%7BVM.RenderedTarget%7D%20target%0D%0A%20%20%20*%20%40param%20%7BVM.RenderedTarget%7D%20%5BoriginalTarget%5D%20If%20target%20is%20a%20clone%2C%20the%20original%20to%20copy%20from.%0D%0A%20%20%20*%2F%0D%0A%20%20const%20implementStretchForTarget%20%3D%20(target%2C%20originalTarget)%20%3D%3E%20%7B%0D%0A%20%20%20%20if%20(STRETCH_X%20in%20target)%20%7B%0D%0A%20%20%20%20%20%20%2F%2F%20Target%20already%20has%20stretch.%20Don't%20implement%20again.%0D%0A%20%20%20%20%20%20return%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20target%5BSTRETCH_X%5D%20%3D%20originalTarget%20%3F%20originalTarget%5BSTRETCH_X%5D%20%3A%20100%3B%0D%0A%20%20%20%20target%5BSTRETCH_Y%5D%20%3D%20originalTarget%20%3F%20originalTarget%5BSTRETCH_Y%5D%20%3A%20100%3B%0D%0A%0D%0A%20%20%20%20const%20original%20%3D%20target._getRenderedDirectionAndScale%3B%0D%0A%20%20%20%20target._getRenderedDirectionAndScale%20%3D%20function%20()%20%7B%0D%0A%20%20%20%20%20%20const%20result%20%3D%20original.call(this)%3B%0D%0A%0D%0A%20%20%20%20%20%20result.scale%5B0%5D%20*%3D%20this%5BSTRETCH_X%5D%20%2F%20100%3B%0D%0A%20%20%20%20%20%20result.scale%5B1%5D%20*%3D%20this%5BSTRETCH_Y%5D%20%2F%20100%3B%0D%0A%0D%0A%20%20%20%20%20%20return%20result%3B%0D%0A%20%20%20%20%7D%3B%0D%0A%20%20%7D%3B%0D%0A%20%20vm.runtime.targets.forEach((target)%20%3D%3E%20implementStretchForTarget(target))%3B%0D%0A%20%20vm.runtime.on(%22targetWasCreated%22%2C%20(target%2C%20originalTarget)%20%3D%3E%0D%0A%20%20%20%20implementStretchForTarget(target%2C%20originalTarget)%0D%0A%20%20)%3B%0D%0A%20%20vm.runtime.on(%22PROJECT_LOADED%22%2C%20()%20%3D%3E%20%7B%0D%0A%20%20%20%20vm.runtime.targets.forEach((target)%20%3D%3E%20implementStretchForTarget(target))%3B%0D%0A%20%20%7D)%3B%0D%0A%0D%0A%20%20%2F**%0D%0A%20%20%20*%20%40param%20%7BVM.RenderedTarget%7D%20target%0D%0A%20%20%20*%2F%0D%0A%20%20const%20forceUpdateDirectionAndScale%20%3D%20(target)%20%3D%3E%20%7B%0D%0A%20%20%20%20target.setDirection(target.direction)%3B%0D%0A%20%20%7D%3B%0D%0A%0D%0A%20%20class%20Stretch%20%7B%0D%0A%20%20%20%20getInfo()%20%7B%0D%0A%20%20%20%20%20%20return%20%7B%0D%0A%20%20%20%20%20%20%20%20id%3A%20%22stretch%22%2C%0D%0A%20%20%20%20%20%20%20%20name%3A%20%22Stretch%22%2C%0D%0A%20%20%20%20%20%20%20%20color1%3A%20%22%234287f5%22%2C%0D%0A%20%20%20%20%20%20%20%20color2%3A%20%22%232b62ba%22%2C%0D%0A%20%20%20%20%20%20%20%20color3%3A%20%22%23204785%22%2C%0D%0A%20%20%20%20%20%20%20%20blocks%3A%20%5B%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22setStretch%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22set%20stretch%20to%20x%3A%20%5BX%5D%20y%3A%20%5BY%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20X%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20100%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20Y%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20100%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20filter%3A%20%5BScratch.TargetType.SPRITE%5D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22changeStretch%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22change%20stretch%20by%20x%3A%20%5BDX%5D%20y%3A%20%5BDY%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20DX%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%200%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20DY%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%200%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%22---%22%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22setStretchX%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22set%20stretch%20x%20to%20%5BX%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20X%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20100%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20filter%3A%20%5BScratch.TargetType.SPRITE%5D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22setStretchY%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22set%20stretch%20y%20to%20%5BY%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20Y%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%20100%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20filter%3A%20%5BScratch.TargetType.SPRITE%5D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22changeStretchX%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22change%20stretch%20x%20by%20%5BDX%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20DX%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%2010%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22changeStretchY%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.COMMAND%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22change%20stretch%20y%20by%20%5BDY%5D%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20arguments%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20DY%3A%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20Scratch.ArgumentType.NUMBER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20defaultValue%3A%2010%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%22---%22%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22getX%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.REPORTER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22x%20stretch%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20filter%3A%20%5BScratch.TargetType.SPRITE%5D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20disableMonitor%3A%20true%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20opcode%3A%20%22getY%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20blockType%3A%20Scratch.BlockType.REPORTER%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20text%3A%20%22y%20stretch%22%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20filter%3A%20%5BScratch.TargetType.SPRITE%5D%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%20%20disableMonitor%3A%20true%2C%0D%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0D%0A%20%20%20%20%20%20%20%20%5D%2C%0D%0A%20%20%20%20%20%20%7D%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20setStretch(args%2C%20util)%20%7B%0D%0A%20%20%20%20%20%20util.target%5BSTRETCH_X%5D%20%3D%20Scratch.Cast.toNumber(args.X)%3B%0D%0A%20%20%20%20%20%20util.target%5BSTRETCH_Y%5D%20%3D%20Scratch.Cast.toNumber(args.Y)%3B%0D%0A%20%20%20%20%20%20forceUpdateDirectionAndScale(util.target)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20changeStretch(args%2C%20util)%20%7B%0D%0A%20%20%20%20%20%20util.target%5BSTRETCH_X%5D%20%2B%3D%20Scratch.Cast.toNumber(args.DX)%3B%0D%0A%20%20%20%20%20%20util.target%5BSTRETCH_Y%5D%20%2B%3D%20Scratch.Cast.toNumber(args.DY)%3B%0D%0A%20%20%20%20%20%20forceUpdateDirectionAndScale(util.target)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20setStretchX(args%2C%20util)%20%7B%0D%0A%20%20%20%20%20%20util.target%5BSTRETCH_X%5D%20%3D%20Scratch.Cast.toNumber(args.X)%3B%0D%0A%20%20%20%20%20%20forceUpdateDirectionAndScale(util.target)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20setStretchY(args%2C%20util)%20%7B%0D%0A%20%20%20%20%20%20util.target%5BSTRETCH_Y%5D%20%3D%20Scratch.Cast.toNumber(args.Y)%3B%0D%0A%20%20%20%20%20%20forceUpdateDirectionAndScale(util.target)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20changeStretchX(args%2C%20util)%20%7B%0D%0A%20%20%20%20%20%20util.target%5BSTRETCH_X%5D%20%2B%3D%20Scratch.Cast.toNumber(args.DX)%3B%0D%0A%20%20%20%20%20%20forceUpdateDirectionAndScale(util.target)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20changeStretchY(args%2C%20util)%20%7B%0D%0A%20%20%20%20%20%20util.target%5BSTRETCH_Y%5D%20%2B%3D%20Scratch.Cast.toNumber(args.DY)%3B%0D%0A%20%20%20%20%20%20forceUpdateDirectionAndScale(util.target)%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20getX(args%2C%20util)%20%7B%0D%0A%20%20%20%20%20%20return%20util.target%5BSTRETCH_X%5D%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%20%20getY(args%2C%20util)%20%7B%0D%0A%20%20%20%20%20%20return%20util.target%5BSTRETCH_Y%5D%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%7D%0D%0A%0D%0A%20%20Scratch.extensions.register(new%20Stretch())%3B%0D%0A%7D)(Scratch)%3B%0D%0A%20%7D)(Scratch)%3B"]) {
+        vm.extensionManager.loadExtensionURL(extension);
+      }
+
+    } catch (e) {
+      handleError(e);
+    }
+  </script>
+  
+  
+    <script>
+      const getProjectData = (function() {
+        const storage = scaffolding.storage;
+        storage.onprogress = (total, loaded) => {
+          setProgress(interpolate(0.2, 0.98, loaded / total));
+        };
+        
+        storage.addWebStore(
+          [
+            storage.AssetType.ImageVector,
+            storage.AssetType.ImageBitmap,
+            storage.AssetType.Sound,
+            storage.AssetType.Font
+          ].filter(i => i),
+          (asset) => new URL('./assets/' + asset.assetId + '.' + asset.dataFormat, location).href
+        );
+        return () => new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+          resolve(xhr.response);
+        };
+        xhr.onerror = () => {
+          if (location.protocol === 'file:') {
+            reject(new Error('正版验证错误'));
+          } else {
+            reject(new Error('连接超时'));
+          }
+        };
+        xhr.onprogress = (e) => {
+          if (e.lengthComputable) {
+            setProgress(interpolate(0.1, 0.2, e.loaded / e.total));
+          }
+        };
+        xhr.responseType = 'arraybuffer';
+        xhr.open('GET', "./assets/project.json");
+        xhr.send();
+      });
+      })();
+    </script>
+  <script>
+    const run = async () => {
+      const projectData = await getProjectData();
+      await scaffolding.loadProject(projectData);
+      setProgress(1);
+      loadingScreen.hidden = true;
+	  scaffolding.start();
+		try{
+			setTimeout(() =>{
+			  console.log('等待三秒后执行')
+			  $("<h3 class='sy' style='margin-left: 20px;'>封皓轩制作</h3>").insertAfter('.green-flag-button');
+			  $("<input type='button' value='反馈' onClick='fk(true)' style='border-style: none; font-size: 30px;margin-left:20px;' class='button'>").insertAfter('.sy')
+		  }, 3000);
+		}
+		catch(a){
+			console.error("多加代码错误",a)
+		} 
+    };
+    run().catch(handleError);
+  </script>
+</body>
+</html>
