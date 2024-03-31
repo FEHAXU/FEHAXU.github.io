@@ -263,8 +263,8 @@
           $("#csb").click(function(){
             $("#glq").val("测试版↓")
             $(".zy>*").hide()  //隐藏所有
-            //$("#null").hide()  //隐藏什么也没有
-            $("#null").show()  //显示什么也没有
+            $("#null").hide()  //隐藏什么也没有
+            $("#小明历险记").show()//显示小明历险记
           })
           //开发版
           $("#kfb").click(function(){
@@ -280,6 +280,8 @@
             $(".zy>*").hide()  //隐藏所有
             $("#僵尸来袭").show()  //显示僵尸来袭
             $("#绝杀记录").show()//显示绝杀记录
+            $("#疯狂坦克大战").show()//显示疯狂坦克大战
+            $("#小明历险记").show()//显示小明历险记
           })
         }
         //僵尸来袭
@@ -309,6 +311,13 @@
           box("绝杀记录","绝杀记录是一个废弃项目，不再更新，里面包含很多scratch的高级技术，有兴趣的请进",true,"开源.sb3",function(){
             alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
             location.href="https://fehaxu.github.io/app/sb3/绝杀记录0.sb3"
+            open("https://turbowarp.org/editor")
+          })
+        })
+        $("#小明历险记").click(function(){
+          box("小明历险记","封皓轩小时候做的(没那么小)。也是半半成品，也是。。。",true,"开源.sb3",function(){
+            alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
+            location.href="https://fehaxu.github.io/app/sb3/小明历险记.sb3"
             open("https://turbowarp.org/editor")
           })
         })
@@ -346,7 +355,10 @@
           <img src="/img/反scratchAlpha.png" alt="">
           <strong>绝杀记录</strong>
         </p>
-        <p class="nr" id="小明历险记"></p>
+        <p class="nr" id="小明历险记">
+          <img src="/img/反scratchAlpha.png" alt="">
+          <strong>小明历险记</strong>
+        </p>
       </div>
       <p style="margin: auto;margin-top: 15%;font-size: 60px;" id="null" hidden>可笑至极，什么也没有!</p>
     </main>
