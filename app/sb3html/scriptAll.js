@@ -44,8 +44,6 @@ function tcym(e) {
   e.returnValue = message;
 }
 // 注册退出页面事件
-$(function () {
-  $(".bq").hide();
-  window.addEventListener("beforeunload", tcym);
-  console.log("1");
-});
+$(".bq").hide();
+window.addEventListener("beforeunload", tcym);
+console.log("1");

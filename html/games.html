@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://fehaxu.github.io/img/syy.jpg"
+      type="image/x-icon"
+    />
+    <title>游戏大全</title>
+    <style>
+      body {
+        font-family: 黑体;
+        text-align: center;
+        position: relative;
+        user-select: none;
+      }
+      .zy {
+        border-radius: 25px;
+        margin: auto;
+        background-color: aqua;
+        width: 1000px;
+        transform-origin: center center;
+      }
+      .nr:hover {
+        background-color: cornflowerblue;
+        transition: background-color 1s ease, transform 1s ease;
+        transform: scale(1.2);
+        z-index: 100;
+      }
+      .nr {
+        background-color: aqua;
+        transition: background-color 1s ease, transform 1s ease;
+        transform: scale(1);
+        border-radius: 10px;
+        z-index: 1;
+        width: 1000px;
+        cursor: pointer;
+      }
+      .jz {
+        position: fixed;
+        z-index: 99;
+        pointer-events: auto;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .jz > h1 {
+        margin-top: 15%;
+        color: white;
+      }
+      .nr > img {
+        position: relative;
+        top: 5px;
+        width: 40px;
+        height: 40px;
+      }
+      .nr > strong {
+        font-size: 40px;
+      }
+      noscript {
+        color: white;
+      }
+      .massage {
+        position: fixed;
+        z-index: 98;
+        pointer-events: auto;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .massage > div {
+        position: relative;
+        background-color: aquamarine;
+        border-radius: 10px;
+        margin: 25%;
+        margin-top: 13%;
+        width: 50%;
+        height: 50%;
+      }
+      .button {
+        background-color: rgb(127, 161, 255);
+        transition: background-color 0.1s ease-in;
+        border-radius: 10px;
+        border: none;
+        font-family: 黑体;
+        font-size: 40px;
+      }
+      .glq{
+        position: fixed;
+        background-color: aqua;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 65px;
+        z-index: 10;
+        transform: translate(40%,-15%);
+      }
+      .glq>input[type="button"]{
+        font-size: 15px;
+        border-radius: 0;
+        width: 100%;
+      }
+      .massage > div > #buttons > .button {
+        position: absolute;
+        left: 50%; /* 定位到容器的水平中心 */
+        transform: translate(-50%, -50%);
+        bottom: 20px;
+      }
+      .button:hover {
+        background-color: rgb(163, 185, 247);
+        transition: background-color 0.1s ease-in;
+      }
+    </style>
+    <script src="/jquery-3.7.1.min.js"></script>
+    <script>
+      //对话框
+      function box(
+        title = "对话框标题",
+        massage = "对话框内容",
+        CanClose = true,
+        button1Text = "*",
+        button1Click = function () {
+          $(".massage").fadeOut(500);
+        },
+        button2Text = "*",
+        button2Click = function () {
+          $(".massage").fadeOut(500);
+        },
+        button3Text = "*",
+        button3Click = function () {
+          $(".massage").fadeOut(500);
+        }
+      ) {
+        $(".massage>div>h1").html(title); //设置标题
+        var nr = $(".massage>div>h3").html(massage); //设置内容
+        if (CanClose) {
+          //是否包含关闭按钮
+          $(".massage>div>img").show(); //包含的话显示关闭按钮
+          nr.css("top", "-15%"); //显示按钮的话需要让文本向上移
+        } else {
+          $(".massage>div>img").hide(); //不包含的话不显示关闭按钮(隐藏)
+          nr.css("top", "0"); //隐藏按钮的话不需要让文本向上移
+        }
+        $(".massage>div>#buttons").empty(); //删除所有按钮
+        var buttona = 0; //初始化设置为0个按钮
+        for (i = 1; i < 4; i++) {
+          //重复执行3次，计算按钮数量
+          switch (i) {
+            case 1:
+              if (button1Text != "*") {
+                buttona++;
+              }
+              break;
+            case 2:
+              if (button2Text != "*" && button1Text != "*") {
+                buttona++;
+              } //确保不会出现跳格初始化，所以要全部再检测一遍!
+              break;
+            case 3:
+              if (
+                button3Text != "*" &&
+                button2Text != "*" &&
+                button1Text != "*"
+              ) {
+                buttona++;
+              }
+              break;
+          }
+        }
+        //console.log("按钮数:" + buttona);
+        //如果有按钮那么继续
+        if (buttona > 0) {
+          var mass = $(".massage>div>#buttons"); //获取对话框主内容里的#buttons ID
+          switch (buttona) {
+            case 1:
+              mass.append(
+                "<input type='button' value='" +
+                  button1Text +
+                  "' class='button' style='left: auto' id='oo1' />"
+              );
+              $("#oo1").click(button1Click);
+              break;
+            case 2:
+              mass.append(
+                "<input type='button' value='" +
+                  button1Text +
+                  "' class='button' style='left: 20%' id='oo1' />"
+              );
+              $("#oo1").click(button1Click);
+              mass.append(
+                "<input type='button' value='" +
+                  button2Text +
+                  "' class='button' style='left:auto;right:20%;' id='oo2' />"
+              );
+              $("#oo2").click(button2Click);
+              break;
+            case 3:
+              mass.append(
+                "<input type='button' value='" +
+                  button1Text +
+                  "' class='button' style='left: 20%' id='oo1' />"
+              );
+              $("#oo1").click(button1Click);
+              mass.append(
+                "<input type='button' value='" +
+                  button2Text +
+                  "' class='button' style='left: auto' id='oo2' />"
+              );
+              $("#oo2").click(button2Click);
+              mass.append(
+                "<input type='button' value='" +
+                  button3Text +
+                  "' class='button' style='left:auto;right:5%;' id='oo3' />"
+              );
+              $("#oo3").click(button3Click);
+              break;
+          }
+        }
+        $(".massage").fadeIn(500); //显示窗口
+      }
+      $(function () {
+        $(".jz").hide(); //加载完成，隐藏加载中页面
+        var glq = $(".glq")
+        $("#glq").click(function(){
+          if($(".glq").is(":visible")){
+            //判断是否可见(如果可见)
+            //$(".glq").fadeOut(300)   
+          }
+          else{
+            function c(){
+              if(glq.is(":visible")){
+                $(".glq").fadeOut(300)
+                $("*").off("click",c)
+              }
+            }
+            $(".glq").fadeIn(300)
+            setTimeout(() =>{
+              $("*").click(c)
+            }, 310);
+          }
+        })
+        {
+          //所有选项卡
+          $("#sy").click(function(){
+            $("#glq").val("所有↓")
+            $("#null").hide()  //隐藏什么也没有
+            $(".zy>*").show()//显示所有
+          })
+          //正式版
+          $("#zsb").click(function(){
+            $("#glq").val("正式版↓")
+            $(".zy>*").hide()  //隐藏所有
+            $("#null").hide()  //隐藏什么也没有
+            $("#疯狂坦克大战").show()  //显示什么也没有
+          })
+          //测试版
+          $("#csb").click(function(){
+            $("#glq").val("测试版↓")
+            $(".zy>*").hide()  //隐藏所有
+            //$("#null").hide()  //隐藏什么也没有
+            $("#null").show()  //显示什么也没有
+          })
+          //开发版
+          $("#kfb").click(function(){
+            $("#glq").val("开发中↓")
+            $("#null").hide()  //隐藏什么也没有
+            $(".zy>*").hide()  //隐藏所有
+            $("#僵尸来袭").show()  //显示僵尸来袭
+          })
+          //开源版
+          $("#kyb").click(function(){
+            $("#glq").val("开源版↓")
+            $("#null").hide()  //隐藏什么也没有
+            $(".zy>*").hide()  //隐藏所有
+            $("#僵尸来袭").show()  //显示僵尸来袭
+            $("#绝杀记录").show()//显示绝杀记录
+          })
+        }
+        //僵尸来袭
+        $("#僵尸来袭").click(function () {
+          box("僵尸来袭", "僵尸来袭目前最新版本正在制作中，网页打开的是旧版，并且由于Tw网页程序稳定性差，所以建议直接使用网页版编辑器打开游玩。已开源", true, "网页版", function(){
+            open("/app/sb3html/jslx")
+            $(".massage").fadeOut(500);
+          }, "开源.sb3", function(){
+            alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
+            location.href="https://fehaxu.github.io/app/sb3/jslx/僵尸来袭.sb3"
+            open("https://turbowarp.org/editor")
+          },"提交改版",function(){
+            alert("暂时不支持，请自己携带U盘保存")
+          })
+        });
+        $("#疯狂坦克大战").click(function(){
+          box("疯狂坦克大战","疯狂坦克大战网页版目前很稳定(网页版好像也是旧版)，已开源",true,"网页版",function(){
+            open("/app/sb3html/fktkdz")
+            $(".massage").fadeOut(500);
+          },"开源.sb3",function(){
+            alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
+            location.href="https://fehaxu.github.io/app/sb3/疯狂坦克大战.sb3"
+            open("https://turbowarp.org/editor")
+          })
+        })
+        $("#绝杀记录").click(function(){
+          box("绝杀记录","绝杀记录是一个废弃项目，不再更新，里面包含很多scratch的高级技术，有兴趣的请进",true,"开源.sb3",function(){
+            alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
+            location.href="https://fehaxu.github.io/app/sb3/绝杀记录0.sb3"
+            open("https://turbowarp.org/editor")
+          })
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div class="jz">
+      <h1>正在努力加载内容...</h1>
+      <noscript> 请启用javascript后继续!如果不启用将无法正常使用 </noscript>
+    </div>
+    <main>
+      <h1 style="margin-top: 50px; font-size: 70px">游戏</h1>
+      <h2 style="font-size: 40px">游戏仅供私人游玩，禁止公开!!!</h2>
+      <p>
+        过滤器:<input type="button" value="所有↓" class="button" id="glq" style="font-size: 15px;border-radius: 0;"/>
+        <div class="glq" hidden>
+          <input type="button" value="所有" class="button" id="sy" />
+          <input type="button" value="正式版" class="button" id="zsb" />
+          <input type="button" value="测试版" class="button" id="csb" />
+          <input type="button" value="开发中" class="button" id="kfb" />
+          <input type="button" value="开源版" class="button" id="kyb" />
+        </div>
+      </p>
+      <div class="zy">
+        <p class="nr" id="僵尸来袭">
+          <img src="/img/反scratchAlpha.png" alt="" />
+          <strong>僵尸来袭</strong>
+        </p>
+        <p class="nr" id="疯狂坦克大战">
+          <img src="/img/反scratch.png" alt="">
+          <strong>疯狂坦克大战</strong>
+        </p>
+        <p class="nr" id="绝杀记录">
+          <img src="/img/反scratchAlpha.png" alt="">
+          <strong>绝杀记录</strong>
+        </p>
+        <p class="nr" id="小明历险记"></p>
+      </div>
+      <p style="margin: auto;margin-top: 15%;font-size: 60px;" id="null" hidden>可笑至极，什么也没有!</p>
+    </main>
+    <div class="massage" hidden>
+      <div>
+        <h1 style="font-size: 60px; margin-top: 0; margin-bottom: 0">name</h1>
+        <img
+          src="/img/close.png"
+          alt="关闭"
+          style="
+            position: relative;
+            top: -60px;
+            right: -47%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+          "
+          onclick="$('.massage').fadeOut(500);"
+        />
+        <h3 style="font-size: 40px; position: relative; top: -15%;text-align: left;">massage</h3>
+        <div id="buttons"></div>
+      </div>
+    </div>
+  </body>
+</html>
