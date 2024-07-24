@@ -119,6 +119,16 @@
     </style>
     <script src="/jquery-3.7.1.min.js"></script>
     <script>
+      //下载
+      function downloadFile(fileName, content=null){
+        var aLink = document.createElement('a');
+        var blob = new Blob([content]);
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent("click", false, false);//initEvent 不加后两个参数在FF下会报错
+        aLink.download = fileName;
+        aLink.href = URL.createObjectURL(blob);
+        aLink.dispatchEvent(evt);
+      }
       //对话框
       function box(
         title = "对话框标题",
@@ -291,8 +301,8 @@
             $(".massage").fadeOut(500);
           }, "开源.sb3", function(){
             alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
-            location.href="https://fehaxu.github.io/app/sb3/jslx/僵尸来袭.sb3"
-            open("https://turbowarp.org/editor")
+            open("https://fehaxu.github.io/app/sb3/jslx/僵尸来袭.sb3")
+            location.href="https://turbowarp.org/editor"
           },"提交改版",function(){
             alert("暂时不支持，请自己携带U盘保存")
           })
@@ -303,22 +313,22 @@
             $(".massage").fadeOut(500);
           },"开源.sb3",function(){
             alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
-            location.href="https://fehaxu.github.io/app/sb3/疯狂坦克大战.sb3"
-            open("https://turbowarp.org/editor")
+            open("https://fehaxu.github.io/app/sb3/疯狂坦克大战.sb3")
+            location.href="https://turbowarp.org/editor"
           })
         })
         $("#绝杀记录").click(function(){
           box("绝杀记录","绝杀记录是一个废弃项目，不再更新，里面包含很多scratch的高级技术，有兴趣的请进",true,"开源.sb3",function(){
             alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
-            location.href="https://fehaxu.github.io/app/sb3/绝杀记录0.sb3"
-            open("https://turbowarp.org/editor")
+            open("https://fehaxu.github.io/app/sb3/绝杀记录0.sb3")
+            location.href="https://turbowarp.org/editor"
           })
         })
         $("#小明历险记").click(function(){
           box("小明历险记","封皓轩小时候做的(没那么小)。也是半半成品，也是。。。",true,"开源.sb3",function(){
             alert("先会下载.sb3文件，然后使用网页版编辑器打开(文件很大，耐心等待!)")
-            location.href="https://fehaxu.github.io/app/sb3/小明历险记.sb3"
-            open("https://turbowarp.org/editor")
+            open("https://fehaxu.github.io/app/sb3/小明历险记.sb3")
+            location.href="https://turbowarp.org/editor"
           })
         })
       });
