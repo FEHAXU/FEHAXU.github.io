@@ -52,6 +52,7 @@
     <script>
       $(function () {
         var video = $(".a");
+
         video.on("canplaythrough", function () {
           $("#jz").hide();
           var queryString = window.location.search;
@@ -142,7 +143,13 @@
     </div>
     <div id="zy" hidden>
       <h1 style="text-align: center" id="title">你被骗啦!!!!!</h1>
-      <video class="a" width="320" height="240" onclick="ll()" preload="auto">
+      <video
+        class="a"
+        width="320"
+        height="240"
+        onclick="ll()"
+        preload="metadata"
+      >
         <source src="/mp4/8月30日.mp4" type="video/mp4" />
         你的浏览器版本太旧不支持html5播放器mp4-video
       </video>
