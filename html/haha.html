@@ -52,7 +52,7 @@
     <script>
       $(function () {
         var video = $(".a");
-
+        video.load();
         video.on("canplaythrough", function () {
           $("#jz").hide();
           var queryString = window.location.search;
@@ -62,7 +62,6 @@
             $("#an").show();
           }
         });
-        video.get(1);
       });
       function ll() {
         var b = $(".a")[0];
