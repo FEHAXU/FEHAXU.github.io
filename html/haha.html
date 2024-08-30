@@ -51,13 +51,18 @@
   <body>
     <script>
       $(function () {
-        $("#jz").hide();
-        var queryString = window.location.search;
-        if (queryString == "?ok") {
-          bb();
-        }
+        var video = $(".a");
+        video.on("canplaythrough", function () {
+          $("#jz").hide();
+          var queryString = window.location.search;
+          if (queryString == "?ok") {
+            bb();
+          } else {
+            $("#an").show();
+          }
+        });
+        video.get(1);
       });
-
       function ll() {
         var b = $(".a")[0];
         b.pause();
@@ -137,7 +142,7 @@
     </div>
     <div id="zy" hidden>
       <h1 style="text-align: center" id="title">你被骗啦!!!!!</h1>
-      <video class="a" width="320" height="240" onclick="ll()">
+      <video class="a" width="320" height="240" onclick="ll()" preload="auto">
         <source src="/mp4/8月30日.mp4" type="video/mp4" />
         你的浏览器版本太旧不支持html5播放器mp4-video
       </video>
@@ -159,7 +164,7 @@
         /><input type="button" id="y" value="确定" />
       </div>
     </div>
-    <div id="an">
+    <div id="an" hidden>
       <input type="button" value="点我试试qaq" id="bu" onclick="bb()" />
     </div>
     <p
