@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://fehaxu.github.io/img/syy.jpg"
+      type="image/x-icon"
+    />
+    <title>qaq</title>
+    <style>
+      @font-face {
+        font-family: "one";
+        src: url("/font/黑体.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      body {
+        font-family: "one", sans-serif;
+      }
+      .a {
+        display: block;
+        position: relative;
+        margin: auto;
+        margin-top: 25%;
+      }
+      #bu {
+        background-color: aquamarine;
+        border: none;
+        border-radius: 10px;
+        font-family: "one", sans-serif;
+      }
+      #y {
+        background-color: aquamarine;
+        border: none;
+        border-radius: 10px;
+        font-family: "one", sans-serif;
+        width: 100px;
+        height: 50px;
+        margin-left: 20%;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <script>
+      $(function () {
+        var queryString = window.location.search;
+        if (queryString == "?ok") {
+          bb();
+        }
+      });
+
+      function ll() {
+        var b = $(".a")[0];
+        b.pause();
+        $(".a").hide();
+        $("#title").text("猜猜我是谁????");
+        $("body").css("background-image", "none");
+        $("#dd").show();
+        $("#d").text("不是跳舞的这个 doge");
+        var c = 0;
+        $("#y").on("click", function () {
+          var da = $("#sr").val();
+          if (da == "封皓轩") {
+            alert("答对了!");
+            location.href = location.href + "?ok";
+          } else if (da == "RickAstIey") {
+            alert("不是跳舞的那个!QAQ");
+            c++;
+          } else if (da == "dog" || da == "doge") {
+            alert("你真幽默");
+            c++;
+          } else if (da == "冯皓轩") {
+            alert("封!!!!!!!!!!!!!!!!!");
+            $("#sr").val("封皓轩");
+            c++;
+          } else {
+            if (c >= 3) {
+              alert("你不会忘了我吧，我是封皓轩啊!");
+              $("#sr").val("封皓轩");
+            } else {
+              alert("错!");
+              c++;
+            }
+          }
+        });
+      }
+      function bb() {
+        $("#zy").fadeIn(300);
+        $("#an").hide();
+        var a = $(".a")[0];
+        a.play();
+        a.onended = function () {
+          var queryString = window.location.search;
+          if (queryString == "?ok") {
+            alert(
+              "拜拜了，下个假期你可别忘了我QAQ(一过来就告诉我，我都不知道你过来了)"
+            );
+            return;
+          }
+          ll();
+        };
+        $("body").css(
+          "background-image",
+          "radial-gradient(at 41.0344760678909% 41.71927410153871%, hsla(195.24590163934425, 100%, 76.07843137254902%, 1) 0%, hsla(195.24590163934425, 100%, 76.07843137254902%, 0) 100%), radial-gradient(at 26.948530003975257% 60.933104644267914%, hsla(211.33757961783442, 81.34715025906736%, 62.15686274509804%, 1) 0%, hsla(211.33757961783442, 81.34715025906736%, 62.15686274509804%, 0) 100%), radial-gradient(at 6.985529560012682% 3.865279154288448%, hsla(267.32673267326726, 70.6293706293706%, 71.96078431372548%, 1) 0%, hsla(267.32673267326726, 70.6293706293706%, 71.96078431372548%, 0) 100%), radial-gradient(at 81.89085419789855% 71.71906324149191%, hsla(195.24590163934425, 100%, 76.07843137254902%, 1) 0%, hsla(195.24590163934425, 100%, 76.07843137254902%, 0) 100%), radial-gradient(at 50.99555597099679% 85.55380097238103%, hsla(211.33757961783442, 81.34715025906736%, 62.15686274509804%, 1) 0%, hsla(211.33757961783442, 81.34715025906736%, 62.15686274509804%, 0) 100%), radial-gradient(at 19.99214410132415% 27.867853090093895%, hsla(267.32673267326726, 70.6293706293706%, 71.96078431372548%, 1) 0%, hsla(267.32673267326726, 70.6293706293706%, 71.96078431372548%, 0) 100%)"
+        );
+      }
+    </script>
+    <div id="zy" hidden>
+      <h1 style="text-align: center" id="title">你被骗啦!!!!!</h1>
+      <video class="a" width="320" height="240" onclick="ll()">
+        <source src="/mp4/8月30日.mp4" type="video/mp4" />
+        你的浏览器版本太旧不支持html5播放器mp4-video
+      </video>
+      <div id="dd" style="margin-top: 20%; margin-left: 15%" hidden>
+        <input
+          type="text"
+          value="输入答案"
+          maxlength="3"
+          style="
+            background-color: aquamarine;
+            font-family: one, sans-serif;
+            border-radius: 10px;
+            border-color: aqua;
+            border-style: solid;
+            height: 50px;
+            font-size: 20px;
+          "
+          id="sr"
+        /><input type="button" id="y" value="确定" />
+      </div>
+    </div>
+    <div id="an">
+      <input type="button" value="点我试试qaq" id="bu" onclick="bb()" />
+    </div>
+    <p
+      style="
+        position: absolute;
+        bottom: 0; /* 距离底部的距离 */
+        width: 100%;
+        text-align: center;
+      "
+      id="d"
+    >
+      点击视频跳过或等待视频播放完毕
+    </p>
+  </body>
+</html>
